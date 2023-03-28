@@ -1,0 +1,71 @@
+{
+  "eventsdetails": [
+    {
+      "committee": "Krithomedh",
+      "eventname": "Turing Cup",
+      "headmail": "nihal@gmail.com",
+      "auditorium": "APJ Abdul Kalam Auditorium",
+      "eventdate": "2023-03-17",
+      "id": 1
+    },
+    {
+      "committee": "GDSC",
+      "eventname": "Webathon",
+      "headmail": "nihal@gmail.com",
+      "auditorium": "APJ Abdul Kalam Auditorium",
+      "eventdate": "2023-03-18",
+      "id": 2
+    },
+    {
+      "committee": "Turing Hut",
+      "eventname": "Turing Cup",
+      "headmail": "nihal@gmail.com",
+      "auditorium": "PEB Seminar hall",
+      "eventdate": "",
+      "id": 3
+    },
+    {
+      "committee": "ACM",
+      "eventname": "Webathon",
+      "headmail": "nihal@gmail.com",
+      "auditorium": "Seminar hall",
+      "eventdate": "",
+      "id": 4
+    },
+    {
+      "committee": "Hack Slash",
+      "eventname": "OpenHouse",
+      "headmail": "eswar@gmail.com",
+      "auditorium": "APJ Abdul Kalam Auditorium",
+      "eventdate": "2023-05-09",
+      "id": 5
+    },
+    {
+      "committee": "GDSC",
+      "eventname": "Webathon",
+      "description": "sdfsdfsdfa",
+      "headmail": "sp@mail",
+      "auditorium": "Seminar hall",
+      "eventdate": "2023-03-11",
+      "id": 6
+    },
+    {
+      "committee": "Krithomedh",
+      "eventname": "Webathon",
+      "description": "sdfsdfsdfa",
+      "headmail": "nihald@gmail.com",
+      "auditorium": "Seminar hall",
+      "eventdate": "2023-03-20",
+      "id": 7
+    },
+    {
+      "committee": "DISABLED",
+      "eventname": "",
+      "description": "",
+      "headmail": "",
+      "auditorium": "APJ Abdul Kalam Auditorium",
+      "eventdate": "",
+      "id": 8
+    }
+  ]
+}
