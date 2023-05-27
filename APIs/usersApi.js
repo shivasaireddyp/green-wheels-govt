@@ -66,13 +66,13 @@ const verifyToken = require('../APIs/middlewares/verifyToken')
 //body parser
 userApp.use(exp.json())
 
-userApp.get('/get-users',verifyToken,expressAsyncHandler(
-    async(request,response)=>{
-        const usersCollection = request.app.get('usersCollection')
-        let allUsers = await usersCollection.find().toArray()
-        response.status(200).send({message:"Users data",payload:allUsers})
-    }
-))
+// userApp.get('/get-users',verifyToken,expressAsyncHandler(
+//     async(request,response)=>{
+//         const usersCollection = request.app.get('usersCollection')
+//         let allUsers = await usersCollection.find().toArray()
+//         response.status(200).send({message:"Users data",payload:allUsers})
+//     }
+// ))
 
 userApp.post('/register-user',expressAsyncHandler(
     async(request,response)=>{
@@ -90,10 +90,45 @@ userApp.post('/register-user',expressAsyncHandler(
             // push into database
             await usersCollection.insertOne(newUser)
             // send response
-            response.status(200).send({message:"User Registered"})
+            response.status(201).send({message:"User Registered"})
         }
     }
 ))
+
+userApp.post('/login-user',expressAsyncHandler(async(request,response)=>{
+
+    //get user collection
+    const userCollectionObj=request.app.get("userCollection")
+  
+    //get user from client
+    const userCredentialsObj=request.body;
+  
+    //verify username of userCredentialsObj
+    let userOfDB=await userCollectionObj.findOne({username:userCredentialsObj.username})
+  
+    //if username is invalid
+    if(userOfDB===null){
+      response.status(200).send({message:"Invalid username"})
+    }
+    //if username is valid
+    else{
+      //compare passwords
+      let isEqual=await bcryptjs.compare(userCredentialsObj.password,userOfDB.password)
+      //if passwords not matched
+      if(isEqual===false){
+        response.status(200).send({message:"Invalid password"})
+      }
+      //passwords are matched
+      else{
+        //create JWT token
+        let signedJWTToken=jwt.sign({username:userOfDB.username},process.env.SECRET_KEY,{expiresIn:"1d"})
+        //send token in response
+        response.status(200).send({message:"success",token:signedJWTToken,user:userOfDB})
+      }
+  
+    }
+  
+  }))
 
 // userApp.delete('/delete-user/:username',expressAsyncHandler(
 //     async(request,response)=>{
@@ -104,27 +139,27 @@ userApp.post('/register-user',expressAsyncHandler(
 //     }
 // ))
 
-userApp.post('/login-user',expressAsyncHandler(
-    async(request,response)=>{
-        const usersCollection = request.app.get('usersCollection')
-        const userCredentials = request.body
-        let userOfDb = await usersCollection.findOne({username:userCredentials.username})
-        if(userOfDb===null){
-            response.send({message:"Invalid username"})
-        }
-        else{
-            // compare passwords
-            if(await bcryptjs.compare(userCredentials.password,userOfDb.password)){
-                // create JWT token
-                let signedToken = jwt.sign({username:userOfDb.username},'abcd',{expiresIn:60})
-                response.send({message:"Login Succesful",payload:signedToken})
+// userApp.post('/login-user',expressAsyncHandler(
+//     async(request,response)=>{
+//         const usersCollection = request.app.get('usersCollection')
+//         const userCredentials = request.body
+//         let userOfDb = await usersCollection.findOne({username:userCredentials.username})
+//         if(userOfDb===null){
+//             response.send({message:"Invalid username"})
+//         }
+//         else{
+//             // compare passwords
+//             if(await bcryptjs.compare(userCredentials.password,userOfDb.password)){
+//                 // create JWT token
+//                 let signedToken = jwt.sign({username:userOfDb.username},'abcd',{expiresIn:60})
+//                 response.send({message:"Login Succesful",payload:signedToken})
  
-            }
-            else{
-                response.send({message:"Invalid Password"})
-            }
-        }
-    }
-))
+//             }
+//             else{
+//                 response.send({message:"Invalid Password"})
+//             }
+//         }
+//     }
+// ))
 
 module.exports = userApp

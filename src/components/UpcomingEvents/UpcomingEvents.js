@@ -9,8 +9,8 @@ function UpcomingEvents() {
   let navigate = useNavigate()
   return (
     <div>
-      <h1 className='text-center mt-4 mb-4' style={{}}>Upcoming Events</h1>
-      <div className='d-flex flex-wrap'>
+      <h1 className='text-center mt-4 mb-4'>Upcoming Events</h1>
+      {/* <div className='d-flex flex-wrap'>
       {
           events.eventsdetails.map((event, index) => <div className='container row-col-sm-12 col-md-4 m-auto col-l-4 cols-row-md-3' key={index}>
             <div className='card mb-5 p-4 bg-dark text-white' style={{borderRadius:"20px"}}>
@@ -23,7 +23,7 @@ function UpcomingEvents() {
             </div>
           </div>)
         }
-      </div>
+      </div> */}
     </div>
   )
 }

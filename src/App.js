@@ -7,7 +7,9 @@ import AudiBooking from './components/AudiBooking/AudiBooking'
 import BookingHistory from './components/BookingHistory/BookingHistory'
 import RegisterEvent from './components/RegisterEvent/RegisterEvent'
 import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents'
-import ComingSoon from './components/ComingSoon'
+import Login from "./components/Login/Login"
+import Register from "./components/Register/Register"
+import Userprofile from "./components/UserProfile/Userprofile"
 function App() {
   const routerObj = createBrowserRouter([
     {
@@ -23,28 +25,36 @@ function App() {
           element: <Committees />
         },
         {
-          path: '/booking-history',
-          element: <BookingHistory />
-        },
-        {
-          path: '/register-event',
-          element: <RegisterEvent />
-        },
-        {
           path: '/upcoming-events',
           element: <UpcomingEvents />
         },
         {
-          path: "/coming-soon",
-          element: <ComingSoon />
+          path: '/login',
+          element: <Login />
+        },
+        {
+          path: '/register',
+          element: <Register />
+        },
+        {
+          path: "/user-profile",
+          element: <Userprofile />,
+          children: [
+            {
+              path: 'register-event',
+              element: <RegisterEvent />
+            },
+            {
+              path: 'booking-history',
+              element: <BookingHistory />
+            },
+          ]
         }
       ]
     }
   ])
   return (
     <div style={{backgroundColor: "#edede9"}}>
-      {/* <h1 className='text-center bg-dark text-white'>Event Management System</h1> */}
-      {/* <Committees /> */}
       <div>
         <RouterProvider router={routerObj} />
       </div>

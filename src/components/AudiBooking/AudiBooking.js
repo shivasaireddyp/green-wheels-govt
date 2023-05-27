@@ -16,16 +16,16 @@ function AudiBooking() {
                 <p className='text-center'>Check out the available auditoriums, more additions soon!</p>
             </div>
             {
-                Audis.auditoriums.map((audi, index)=><div className='col-sm-12 col-md-10 m-auto col-l-10' key={index}>
-                    <div className='card mb-5 bg-dark p-2'>
-                        <img className='props text-white mb-4 ' src={audi.photo}></img>
-                        <h2 className='props text-white'>Name - {audi.name}</h2>
-                        <h3 className='props text-white'>Capacity : {audi.capacity}</h3>
-                        <h3 className='props text-white'>Location : {audi.location}</h3>
-                        <h3 className='props text-white'>Cost per hour : {audi.cost}</h3>
-                        <button onClick={()=>navigate('/register-event')} className='btn props mt-4  mb-4' style={{backgroundColor: "#AA77FF"}}>Book now</button>
-                    </div>
-                </div>)
+                // Audis.auditoriums.map((audi, index)=><div className='col-sm-12 col-md-10 m-auto col-l-10' key={index}>
+                //     <div className='card mb-5 bg-dark p-2'>
+                //         <img className='props text-white mb-4 ' src={audi.photo}></img>
+                //         <h2 className='props text-white'>Name - {audi.name}</h2>
+                //         <h3 className='props text-white'>Capacity : {audi.capacity}</h3>
+                //         <h3 className='props text-white'>Location : {audi.location}</h3>
+                //         <h3 className='props text-white'>Cost per hour : {audi.cost}</h3>
+                //         <button onClick={()=>navigate('/register-event')} className='btn props mt-4  mb-4' style={{backgroundColor: "#AA77FF"}}>Book now</button>
+                //     </div>
+                // </div>)
             }
         </div>
     )
