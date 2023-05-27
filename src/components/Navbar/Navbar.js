@@ -14,11 +14,13 @@ function Navbar() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div className="navbar-nav">
-        <Link className="nav-link text-white active m-auto float-right" aria-current="page" to="/"><h5>Home</h5></Link>
-        <Link className="nav-link text-white m-auto float-right" to="register-event/"><h5>Register Event</h5></Link>
-        <Link className="nav-link text-white m-auto float-right" to="booking-history/"><h5>Booking History</h5></Link>
-        <Link className="nav-link text-white m-auto float-right" to="upcoming-events/"><h5>Upcoming Events</h5></Link>
+      <div className="navbar-nav ms-auto">
+        <Link className="nav-link text-white active m-auto" aria-current="page" to="/"><h5>Home</h5></Link>
+        <Link className="nav-link text-white m-auto ml-4" to="register-event/"><h5>Register Event</h5></Link>
+        <Link className="nav-link text-white m-auto ml-3" to="booking-history/"><h5>Booking History</h5></Link> 
+        <Link className="nav-link text-white m-auto ml-3" to="upcoming-events/"><h5>Upcoming Events</h5></Link>
+        <Link className="nav-link text-white m-auto ml-3" to="upcoming-events/"><h5>Login</h5></Link>
+        <Link className="nav-link text-white m-auto ml-4" to="upcoming-events/"><h5>Sign Up</h5></Link>
       </div>
     </div>
   </div>

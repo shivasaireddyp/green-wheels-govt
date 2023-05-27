@@ -118,7 +118,7 @@ userApp.post('/login-user',expressAsyncHandler(
                 // create JWT token
                 let signedToken = jwt.sign({username:userOfDb.username},'abcd',{expiresIn:60})
                 response.send({message:"Login Succesful",payload:signedToken})
-                
+ 
             }
             else{
                 response.send({message:"Invalid Password"})
