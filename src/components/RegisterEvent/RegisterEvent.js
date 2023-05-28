@@ -8,43 +8,38 @@ import { useState } from 'react'
 function RegisterEvent() {
     // let location = useLocation()
     // let navigate = useNavigate()
+    let {register,handleSubmit} = useForm();
 
-    // let { register, handleSubmit } = useForm()
-    // function formSubmit(Obj){
-    //     fetch("http://localhost:4000/eventsdetails",{
-    //         method: "POST",
-    //         headers :{"Content-Type":"application/json"},
-    //         body: JSON.stringify(Obj)
-    //     })
-    //     .then(res => res.json())
-    //     .then(msg => console.log(msg))
-    //     .catch(err => console.log("error occured is",err))
-    // }
+    let addEvent=(newEvent)=>{
+        console.log(newEvent)
+    }
     return (
         <div>
             <h1 className='text-center m-4'>Register for an Event</h1>
-            {/* <div>
-                <form className='w-75 m-auto' onSubmit={handleSubmit(formSubmit)}>
+            <div>
+                <form className='w-75 m-auto' onSubmit={handleSubmit(addEvent)}>
                 <div className="form-group mb-4">
                         <label htmlFor="committee">Select Committee:</label>
-                        <select className="form-control" id="committee" defaultValue="DISABLED" placeholder="Select your Committee:" {...register("committee")}>
+                        <select className="form-control" id="committee" defaultValue="DISABLED" placeholder="Select your Committee:" {...register("committee",{required:true})}>
+                            <option>default</option>
                         </select>
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="eventname">Enter event name:</label>
-                        <input type="text" className="form-control" id="eventname" placeholder="" {...register("eventname")}/>
+                        <input type="text" className="form-control" id="eventname" placeholder="" {...register("eventname",{required:true})}/>
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="description">Event Description:</label>
-                        <input type="text" className="form-control" id="description" placeholder="" {...register("description")}/>
+                        <input type="text" className="form-control" id="description" placeholder="" {...register("description",{required:true})}/>
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="headmail">Committee Head Email address:</label>
-                        <input type="email" className="form-control" id="headmail" placeholder="name@example.com" {...register("headmail")}/>
+                        <input type="email" className="form-control" id="headmail" placeholder="name@example.com" {...register("headmail",{required:true})}/>
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="auditorium">Select Auditorium:</label>
-                        <select className="form-control" id="auditorium" {...register("auditorium")}>
+                        <select className="form-control" id="auditorium" {...register("auditorium",{required:true})}>
+                            <option value="" disabled selected>select an option</option>
                             {
                                 Audis.auditoriums.map((audi,index)=><option key={index}>{audi.name}</option>)
                             }
@@ -52,17 +47,17 @@ function RegisterEvent() {
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="eventdate" className='font-weight-bold'>Select a date:</label>
-                        <input type="date" className="form-control" id="eventdate" {...register("eventdate")}/>
-                        <div><button className='btn mt-1' style={{backgroundColor:"#62CDFF"}} onClick={()=>navigate("/upcoming-events")} to="upcoming-events/">Check out Upcoming Events</button></div>
+                        <input type="date" className="form-control" id="eventdate" {...register("eventdate",{required:true})}/>
+                        {/* <div><button className='btn mt-1' style={{backgroundColor:"#62CDFF"}} onClick={()=>navigate("/upcoming-events")} to="upcoming-events/">Check out Upcoming Events</button></div> */}
                     </div>
                     <div>
                         <h3>Details:</h3>
                     </div>
                     <div className='m-auto'>
-                        <button className="btn text-white" style={{backgroundColor:"#AA77FF"}} onClick={handleSubmit(formSubmit)}>Submit</button>
+                        <button className="btn text-white" style={{backgroundColor:"#AA77FF"}}>Submit</button>
                     </div>
                 </form>
-            </div> */}
+            </div>
         </div>
     )
 }
