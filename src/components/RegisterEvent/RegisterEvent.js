@@ -4,7 +4,9 @@ import Audis from './../AudiBooking/audis.json'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
+
 function RegisterEvent() {
+    // let location = useLocation()
     // let navigate = useNavigate()
 
     // let { register, handleSubmit } = useForm()

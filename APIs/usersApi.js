@@ -98,7 +98,7 @@ userApp.post('/register-user',expressAsyncHandler(
 userApp.post('/login-user',expressAsyncHandler(async(request,response)=>{
 
     //get user collection
-    const userCollectionObj=request.app.get("userCollection")
+    const userCollectionObj=request.app.get("usersCollection")
   
     //get user from client
     const userCredentialsObj=request.body;
@@ -121,7 +121,7 @@ userApp.post('/login-user',expressAsyncHandler(async(request,response)=>{
       //passwords are matched
       else{
         //create JWT token
-        let signedJWTToken=jwt.sign({username:userOfDB.username},process.env.SECRET_KEY,{expiresIn:"1d"})
+        let signedJWTToken=jwt.sign({username:userOfDB.username},"abcdef",{expiresIn:"1d"})
         //send token in response
         response.status(200).send({message:"success",token:signedJWTToken,user:userOfDB})
       }

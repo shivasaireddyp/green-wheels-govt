@@ -2,17 +2,22 @@ import React,{useState,useContext,useEffect} from 'react'
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
 import { loginContext } from '../../contexts/loginContext'
+// import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function Login() {
 
-
+  const navigate = useNavigate();
+  const location = useLocation();
   let [currentUser,error,userLoginStatus,loginUser,logoutUser]=useContext(loginContext)
+  // if(location.state?.from){
+  //   navigate(location.state.from)
+  // }
 
    //error state
   // let [err, setErr] = useState("");
 
    //navigate
-   const navigate = useNavigate();
  
    //use form hook
    let {
@@ -24,15 +29,20 @@ function Login() {
 
    //user login
    const handleUserLogin=(userCredObj)=>{
-   console.log(userCredObj)
+  //  console.log(userCredObj)
     loginUser(userCredObj)
    }
 
 
    useEffect(()=>{
     if(userLoginStatus==true){
+      if(location.state?.from){
+        navigate(location.state.from)
+      }
+      else{
+        navigate("/user-profile")
+      }
       console.log("login successful")
-      navigate("/user-profile")
     }
     else{
       console.log("not success")
@@ -45,9 +55,12 @@ function Login() {
     <div className="add-user mt-5">
      
       {/* form submission error */}
-      {error && error.length !== 0 && (
+      {/* {error && error.length !== 0 && (
         <p className="display-3 text-danger text-center">{error}</p>
-      )}
+      )} */}
+      {
+        error?<p className="display-3 text-danger text-center">{error}</p>:""
+      }
       {/* add user form */}
       <div className="row">
         <div className="col-11 col-sm-8 col-md-6 mx-auto">

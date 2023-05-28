@@ -64,7 +64,7 @@ function Register() {
 
   return (
     <div className="add-user">
-      <p className="display-3 text-center">Add New User</p>
+      <h1 className=" text-center">Sign Up</h1>
       {/* form submission error */}
       {error.length !== 0 && (
         <p className="display-3 text-danger text-center">{error}</p>

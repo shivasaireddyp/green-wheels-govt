@@ -1,48 +1,46 @@
-import React, { useContext, useState } from "react";
-// import "./UserProfile.css";
-import { loginContext } from "../../contexts/loginContext";
-import axios from "axios";
+import React from 'react'
+import { useContext } from 'react'
+import {loginContext} from '../../contexts/loginContext'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Outlet,Navigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-function UserProfile() {
-  let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
-    useContext(loginContext);
-  let [err, setErr] = useState("");
-  let [data, setData] = useState("");
+function Userprofile() {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let [currentUser,error,userLoginStatus,loginUser,logoutUser]=useContext(loginContext)
+  if(userLoginStatus){
+    return(
+      <div>
+        <h2>Dashboard</h2>
+        <p>Welcome, {currentUser.username}</p>
+        <Outlet />
+      </div>
+    )
+  }
+  else{
+    return <Navigate to={'/login'} replace state={{from:location}} />
+  }
 
-console.log(currentUser)
-
-  //get data from protected route
-  const getProtectedData = () => {
-
-    //get token from local storage
-    let token=localStorage.getItem("token")
-
-    axios
-      .get("http://localhost:4000/user-api/test",{headers:{"Authorization":"Bearer "+token}})
-      .then((response) => {
-        setData(response.data.message);
-      })
-      .catch((err) => {
-        setErr(err.message);
-      });
-  };
-
-  return (
-    <div>
-      <p className="display-4 text-end text-primary">
-        Welcome, {currentUser.username}
-      </p>
-      <img src={currentUser.image} width="60px" className="float-end" alt="" />
-
-      <button className="btn btn-danger mx-auto" onClick={getProtectedData}>
-        Get Protected Data
-      </button>
-
-      <h1>{data}</h1>
-
-      {/* add products and cart links here */}
-    </div>
-  );
+  // return (
+    // <div>
+    //   <h2>Dashboard</h2>
+    //   <p>Welcome, {currentUser.username}</p>
+    //   {/* <Link to="/user-profile/register-event">
+    //     <button>Register Event with us</button>
+    //   </Link> */}
+      
+    //     if(userLoginStatus){
+    //       <Outlet />
+    //     }
+    //     else{
+    //       <Navigate to={'/login'}/>
+    //     }
+      
+    //   {/* <button className='btn btn-primary' onClick={navigate('/user-profile/register-event/')}>Register an event with us</button> */}
+    // </div>
+  // )
 }
 
-export default UserProfile;
+export default Userprofile
