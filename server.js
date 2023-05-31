@@ -34,6 +34,13 @@ const usersApp = require("./APIs/usersApi")
 app.use('/users-api',usersApp)
 // app.use('/products-api',productsApp)
 
+//middlware to deal with page refresh
+const pageRefresh=(request,response,next)=>{
+    response.sendFile(path.join(__dirname,'./build/index.html'))
+}
+
+app.use("/*",pageRefresh)
+
 const invalidPathMiddleware=(request,response,next)=>{
     response.send({message:"Invalid url check again!, verify again"})
     // console.log(response)

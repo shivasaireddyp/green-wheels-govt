@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   //error state
   let [error, setError] = useState("");
+  let [selectedFile,setSelectedFile] = useState(null)
 
   //navigate
   const navigate = useNavigate();
@@ -21,19 +22,19 @@ function Register() {
   //adding new user
   let addNewUser = (newUser) => {
     console.log(newUser);
-    //make HTTP POST req to save newUser to localAPI
-
-    // let fd=new FormData();
+    
+    let fd=new FormData();
     //append newUser to form data
-    // fd.append("user",JSON.stringify(newUser))
+    fd.append("user",JSON.stringify(newUser)) 
     //append selected file to form data
-    // fd.append("photo",selectedFile)
+    fd.append("userimage",selectedFile)
     // let fd=new FormData();
     //append newUser to form data
     // fd.append("user",JSON.stringify(newUser))
-
+    
+    //make HTTP POST req to save newUser to localAPI
     axios
-      .post("http://localhost:4000/users-api/register-user",newUser)
+      .post("http://localhost:4000/users-api/register-user",fd)
       .then((response) => {
         
         if (response.status === 201) {
@@ -62,6 +63,11 @@ function Register() {
   
   };
 
+  const onFileSelect=(e)=>{
+    console.log(e.target.files[0])
+    setSelectedFile(e.target.files[0])
+  }
+
   return (
     <div className="add-user">
       <h1 className=" text-center">Sign Up</h1>
@@ -75,7 +81,7 @@ function Register() {
           <form onSubmit={handleSubmit(addNewUser)}>
             {/* username */}
             <div className="mb-3">
-              <label htmlFor="name">Userame</label>
+              <label htmlFor="name">Username</label>
               <input
                 type="text"
                 id="username"
@@ -135,6 +141,24 @@ function Register() {
               {errors.dob?.type === "required" && (
                 <p className="text-danger fw-bold fs-5">
                   *Date of birth is required
+                </p>
+              )}
+            </div>
+            {/* profile picture select */}
+            <div className="mb-3">
+              <label htmlFor="user-image">Select a Profile Picture:</label>
+              <input
+                type="file"
+                id="userimage"
+                className="form-control"
+                // placeholder="e.g. John"
+                {...register("userimage", { required: true })}
+                onInput={onFileSelect}
+              />
+              {/* validation errors for name */}
+              {errors.username?.type === "required" && (
+                <p className="text-danger fw-bold fs-5">
+                  Image is required
                 </p>
               )}
             </div>

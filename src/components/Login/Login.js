@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 import { loginContext } from '../../contexts/loginContext'
 // import { useNavigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+// import { useState } from 'react'
 
 function Login() {
 
@@ -15,7 +17,7 @@ function Login() {
   // }
 
    //error state
-  // let [err, setErr] = useState("");
+  let [pageHead, setPageHead] = useState("Login");
 
    //navigate
  
@@ -32,7 +34,8 @@ function Login() {
   //  console.log(userCredObj)
     loginUser(userCredObj)
    }
-
+   
+  //  console.log(location?.state?.from.pathname)
 
    useEffect(()=>{
     if(userLoginStatus==true){
@@ -45,14 +48,21 @@ function Login() {
       console.log("login successful")
     }
     else{
+
       console.log("not success")
     }
    },[userLoginStatus])
 
-  
+  //  if(location.state.from.pathname==='/user-profile/register-event'){
+  //   // setPageHead("Login to Continue")
+  //  }
+
 
   return (
-    <div className="add-user mt-5">
+    <div>
+        {
+          location?.state?.from.pathname=='/user-profile/register-event'?<h1 className='text-center'>Login to Continue</h1>:<h1 className='text-center'>Login</h1>
+        }
      
       {/* form submission error */}
       {/* {error && error.length !== 0 && (
@@ -103,6 +113,7 @@ function Login() {
             <button type="submit" className="btn btn-primary">
               Login
             </button>
+            <p>dont have an account? <Link to="/register">sign up </Link>here</p>
           </form>
         </div>
       </div>

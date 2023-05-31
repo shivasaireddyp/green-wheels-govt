@@ -15,12 +15,15 @@ function Userprofile() {
       <div>
         <h2>Dashboard</h2>
         <p>Welcome, {currentUser.username}</p>
+        <img src={currentUser.image} />
         <Outlet />
       </div>
     )
   }
   else{
-    return <Navigate to={'/login'} replace state={{from:location}} />
+    return (
+      <Navigate to={'/login'} replace state={{from:location}} />
+    )
   }
 
   // return (

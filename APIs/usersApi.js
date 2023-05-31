@@ -9,6 +9,9 @@ const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const verifyToken = require('../APIs/middlewares/verifyToken')
 
+//import multerObj
+const multerObj = require('./middlewares/cloudinaryConfig')
+
 // userApp.get('/get-users',expressAsyncHandler(
 //     async(request,response)=>{
 //         const usersCollection = request.app.get('usersCollection')
@@ -74,16 +77,20 @@ userApp.use(exp.json())
 //     }
 // ))
 
-userApp.post('/register-user',expressAsyncHandler(
+userApp.post('/register-user',multerObj.single('userimage'),expressAsyncHandler(
     async(request,response)=>{
         const usersCollection = request.app.get('usersCollection')
-        const newUser = request.body
+        const newUser = JSON.parse(request.body.user) 
         let result = await usersCollection.findOne({username:newUser.username})
         // console.log(result)
         if(result!==null){
             response.status(200).send({message:"Username already exists"})
         }
         else{
+
+            //add cdn link upload cdn link of cloudinary image to user object
+            newUser.image = request.file.path;
+
             // hash the password before pushing into database
             let hashedPassword = await bcryptjs.hash(newUser.password,5)
             newUser.password = hashedPassword
