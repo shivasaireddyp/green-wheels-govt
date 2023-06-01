@@ -18,20 +18,25 @@ mclient.connect('mongodb://127.0.0.1:27017/emsdb')
     let dbObj = dbRef.db('emsdb')
     let usersCollection = dbObj.collection("userscollection")
     // let productsCollection = dbObj.collection("productscollection")
+    let audisCollection = dbObj.collection("audiscollection")
     
     //share collection objs to API
     app.set("usersCollection",usersCollection)
     // app.set("productsCollection",productsCollection)
+    app.set("audisCollection",audisCollection)
     console.log("Data base conn succesful")
 })
 .catch(err=>console.log("An error is occured",err))
 
+
 // importing apis
 const usersApp = require("./APIs/usersApi")
+const audisApp = require("./APIs/audisApi")
 // const productsApp = require("./APIs/productsApi")
 
 // forwarding requests to apis
 app.use('/users-api',usersApp)
+app.use('/audis-api',audisApp)
 // app.use('/products-api',productsApp)
 
 //middlware to deal with page refresh

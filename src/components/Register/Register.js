@@ -25,7 +25,7 @@ function Register() {
     
     let fd=new FormData();
     //append newUser to form data
-    fd.append("user",JSON.stringify(newUser)) 
+    fd.append("user",JSON.stringify(newUser))
     //append selected file to form data
     fd.append("userimage",selectedFile)
     // let fd=new FormData();
