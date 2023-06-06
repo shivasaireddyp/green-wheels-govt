@@ -6,11 +6,15 @@ import "bootstrap"
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import UserLoginContextStore from "./contexts/UserLoginContextStore";
+import AudiBooking from './components/AudiBooking/AudiBooking';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
     <UserLoginContextStore>
-        <App />
+            {/* <AudiBooking> */}
+            <App />
+            {/* </AudiBooking> */}
     </UserLoginContextStore>
 );
 

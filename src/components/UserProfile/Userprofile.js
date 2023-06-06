@@ -15,7 +15,7 @@ function Userprofile() {
       <div>
         <h2>Dashboard</h2>
         <p>Welcome, {currentUser.username}</p>
-        <img src={currentUser.image} />
+        {/* <img src={currentUser.image} /> */}
         <Outlet />
       </div>
     )
@@ -46,4 +46,4 @@ function Userprofile() {
   // )
 }
 
-export default Userprofile
+export default Userprofile;
