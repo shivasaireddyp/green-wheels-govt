@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import "./AudiBooking.css"
 import { useState } from 'react'
 import Audis from './../AudiBooking/audis.json'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import RegisterEvent from '../RegisterEvent/RegisterEvent'
-import audisContext from '../../contexts/audisContext'
+import { AuditoriumContext } from '../../contexts/AuditoriumContext'
 function AudiBooking() {
+    const {selectAuditorium} = useContext(AuditoriumContext)
     let navigate = useNavigate()
     let [audis,setAudis] = useState([])
-    // let [isClicked,setIsClicked] = useState(false)
-    let [selectedAudi,setSelectedAudi] = useState(null)
     useEffect(()=>{
     const fetchData = async()=>{
         axios.get("http://localhost:4000/audis-api/audis")
@@ -25,12 +24,17 @@ function AudiBooking() {
     fetchData();
     },[setAudis])
 
+    const handleAuditoriumClick = (audi)=>{
+        selectAuditorium(audi)
+        navigate('/user-profile/register-event')
+    }
+
     console.log(audis)
 
     const handleClick=(audi)=>{
-        console.log(audi)
+        // console.log(audi)
         // setSelectedAudi(audi)
-        navigate('/user-profile/register-event')
+        // navigate('/user-profile/register-event')
         // setIsClicked(true)
     }
 
@@ -58,7 +62,7 @@ function AudiBooking() {
                          <h3 className='props text-white'>Location : {audi.address}</h3>
                         <h3 className='props text-white'>Cost per hour : {audi.cost}</h3>
                         <h3 className='props text-white'>Contact : {audi.contact}</h3>
-                        <button className='btn props mt-4  mb-4' onClick={()=>handleClick(audi)} style={{backgroundColor: "#AA77FF"}}>Book now</button>
+                        <button className='btn props mt-4  mb-4' onClick={()=>handleAuditoriumClick(audi)} style={{backgroundColor: "#AA77FF"}}>Book now</button>
                         {/* {isClicked && (
                             <audisProvider value={audi}>
                                 <RegisterEvent />

@@ -1,11 +1,12 @@
 import React,{useContext} from 'react'
 import { useForm } from 'react-hook-form'
 import Audis from './../AudiBooking/audis.json'
+import { AuditoriumContext } from '../../contexts/AuditoriumContext'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import audisContext from '../../contexts/audisContext'
 
 function RegisterEvent() {
+    const {selectedAuditorium} = useContext(AuditoriumContext)
     // let location = useLocation()
     // let navigate = useNavigate()
 
@@ -42,11 +43,16 @@ function RegisterEvent() {
                         </div>
                         <div className="form-group mb-4">
                             <label htmlFor="auditorium">Select Auditorium:</label>
-                            <select className="form-control" id="auditorium" {...register("auditorium",{required:true})}>
-                                <option value="" disabled selected>select an option</option>
+                            <select className="form-control" id="auditorium" value={selectedAuditorium ? selectedAuditorium.name : ''} readOnly {...register("auditorium",{required:true})}>
+                                {/* <option value="" disabled selected>select an option</option> */}
                                 {
-                                    Audis.auditoriums.map((audi,index)=><option key={index}>{audi.name}</option>)
+                                    selectedAuditorium && (
+                                        <option value={selectedAuditorium.name}>{selectedAuditorium.name}</option>
+                                        )
                                 }
+                                    {
+                                        Audis.auditoriums.map((audi,index)=><option key={index}>{audi.name}</option>)
+                                    }
                             </select>
                         </div>
                         <div className="form-group mb-4">
