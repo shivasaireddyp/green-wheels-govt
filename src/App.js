@@ -10,6 +10,7 @@ import UpcomingEvents from './components/UpcomingEvents/UpcomingEvents'
 import Login from "./components/Login/Login"
 import Register from "./components/Register/Register"
 import Userprofile from "./components/UserProfile/Userprofile"
+import "./App.css"
 function App() {
   const routerObj = createBrowserRouter([
     {
@@ -54,8 +55,9 @@ function App() {
     }
   ])
   return (
-    <div style={{backgroundColor: "#edede9"}}>
-      <div>
+    <div className='app-container for-bg'>
+      <div className='background-image'></div>
+      <div className='content'>
         <RouterProvider router={routerObj} />
       </div>
     </div>

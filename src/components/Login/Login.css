@@ -1,0 +1,33 @@
+html,body { 
+	height: 100%; 
+}
+
+card-title{ font-weight:300; }
+
+.btn{
+	font-size: 14px;
+	margin-top:20px;
+}
+
+
+.login-form{ 
+	width:400px;	
+	background-image: url("../../../src/images/lee-blanchflower-1dW1vEJLlCQ-unsplash\ \(2\).jpg");
+	background-size: 450px 300px;
+}
+
+.login-bg {
+	background: rgba(0, 0, 0 ,0.5);
+	backdrop-filter: blur(1px);
+}
+
+.sign-up{
+	text-align:center;
+	padding:20px 0 0;
+}
+
+.login-sideimg{
+	background-image: url("../../images/sam-wermut-3CNe-P7EH_g-unsplash.jpg");
+	width: 400px;
+	background-size: 400px 400px;
+}
