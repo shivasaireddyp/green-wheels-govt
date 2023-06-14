@@ -6,8 +6,8 @@ import { AiFillMail } from "react-icons/ai";
 
 function Footer() {
   return (
-    <div style={{ marginTop: "5%" }}>
-      <footer className="bg-dark text-white pt-3 pb-3">
+    <div style={{ marginTop: "5%",backgroundColor:"black" }}>
+      <footer className=" text-white pt-3 pb-3">
         <div className="container text-center text-md-left">
           <div className="row text-center text-md-left">
             <div className="col-md-10 col-lg-7 col-xl-3 mx-auto mt-1">

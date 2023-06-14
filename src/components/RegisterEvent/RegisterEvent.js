@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import { useForm } from 'react-hook-form'
 import Audis from './../AudiBooking/audis.json'
 import { AuditoriumContext } from '../../contexts/AuditoriumContext'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 function RegisterEvent() {
@@ -68,8 +68,8 @@ function RegisterEvent() {
                             <label htmlFor="eventendtime">Select a End Time for the event</label>
                             <input type="time" className="form-control" id="eventendtime" placeholder="" {...register("eventendtime",{required:true})}/>
                         </div>
-                        <h3>Refer Upcoming Events</h3>
-                        <div className='m-auto'>
+                        <Link className='text-decoration-none' to="/upcoming-events"><h3>Refer Upcoming Events</h3></Link>
+                        <div className='m-auto mb-4'>
                             <button className="btn text-white" style={{backgroundColor:"#AA77FF"}}>Submit</button>
                         </div>
                     </form>

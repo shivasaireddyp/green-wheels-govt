@@ -14,30 +14,43 @@ function Userprofile() {
     useContext(loginContext);
   if (userLoginStatus) {
     return (
-      <div className="text-light">
-        <h2>Dashboard</h2>
-        <h3>Welcome, {currentUser.name}</h3>
-        <div class="container d-flex justify-content-center mt-5">
-          <div className="cardm">
-            <div className="top-container">
-              <img
-                src={currentUser.image}
-                className="img-fluid profile-image"
-                style={{ width: "100" }}
-              ></img>
-              <div class="ml-3">
-                <h4 class="name">{currentUser.name}</h4>
+      <div className="container text-light">
+        <h1>Dashboard</h1>
+        <div className="row row-cols-1 g-3">
+          <div className="col-md-4">
+            <div className="cardm">
+              <div className="top-container">
+                <img
+                  src={currentUser.image}
+                  className="img-fluid profile-image"
+                  style={{ width: "100" }}
+                ></img>
+                <div className="">
+                  <h3 className="name mt-1">@{currentUser.username}</h3>
+                </div>
+              </div>
+              <div className="recent-border mt-4">
+                <span className="recent-orders">
+                  <Link className="text-decoration-none" to="/">
+                    Booking History
+                  </Link>
+                </span>
+              </div>
+              <div className="wishlist-border pt-2">
+                <span className="wishlist">
+                  <Link className="text-decoration-none" to="/">
+                    Wishlist
+                  </Link>
+                </span>
               </div>
             </div>
-            <div class="recent-border mt-4">
-              <span class="recent-orders">Recent Bookings</span>
-            </div>
-            <div class="wishlist-border pt-2">
-              <span class="wishlist">Wishlist</span>
+          </div>
+          <div className="reg-form col-md-8">
+            <div className="">
+              <Outlet />
             </div>
           </div>
         </div>
-        <Outlet />
       </div>
     );
   } else {

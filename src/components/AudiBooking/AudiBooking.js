@@ -67,12 +67,12 @@ function AudiBooking() {
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {audis.map((audi) => (
             <div key={audis._id}>
-              <div className="col">
-                <div className="card h-50 bg-dark text-light">
+              <div className="col for-cards ">
+                <div className="h-50 text-light">
                   <div>
                     <img
-                      className=" mb-1 rounded "
-                      style={{ height: "300px", width: "100%" }}
+                      className=" mb-1 "
+                      style={{ height: "300px", width: "100%", borderTopLeftRadius:"25px", borderTopRightRadius:"25px"}}
                       src={audi.image}
                     ></img>
                   </div>
@@ -84,6 +84,9 @@ function AudiBooking() {
                     <p className=" ">Contact : {audi.contact}</p>
                   </div>
                   <div className="text-center props">
+                    <a className="d-block float-start mb-2" href="#">
+                      Check out past events here
+                    </a>
                   <button
                       className="btn mb-2 w-100"
                       onClick={() => handleAuditoriumClick(audi)}
@@ -91,9 +94,6 @@ function AudiBooking() {
                     >
                       Book now
                     </button>
-                    <a className="d-block float-start mb-2" href="#">
-                      Check out past events here
-                    </a>
                   </div>
                 </div>
               </div>

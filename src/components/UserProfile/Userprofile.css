@@ -1,22 +1,22 @@
 .cardm{
 	background-color: black;
-	width: 280px;
+	/* width: 280px; */
+    /* height: 350px; */
 	border-radius: 33px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding: 2rem !important;
 }
-.top-container{
-	display: flex;
-	align-items: center;
-}
+/* .top-container{ */
+	/* display: flex; */
+	/* align-items: center; */
+/* } */
 .profile-image{
 	border-radius: 10px;
-	border: 2px solid black;
 }
 .name{
 	font-size: 15px;
 	font-weight: bold;
-	color: #272727;
+	color: white;
 	position: relative;
 	top: 8px;
 }
@@ -49,4 +49,10 @@
 }
 .fashion-studio-border:hover {
 	border-bottom: 1px solid white!important
+}
+
+.reg-form {
+    background-color: black;
+    border-radius: 33px;
+	padding: 2rem !important;
 }
