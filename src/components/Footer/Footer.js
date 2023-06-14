@@ -13,9 +13,8 @@ function Footer() {
             <div className="col-md-10 col-lg-7 col-xl-3 mx-auto mt-1">
               <h5>About Us:</h5>
               <p>
-                At LEM we provide bookings of auditoriums at VNRVJIET College,
-                such as KS auditorium, where a selected list of committees can
-                book auditoriums. Contact info: 8328552183
+                At LEM we provide bookings of auditoriums accross the city. where a selected list of committees can
+                book auditoriums. Contact info:+91 8328552183
               </p>
             </div>
             <div className="col-md-2 col-lg-3 col-xl-2 mx-auto mt-1">

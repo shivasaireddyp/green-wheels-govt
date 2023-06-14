@@ -36,26 +36,26 @@ function Navbar() {
                 aria-current="page"
                 to="/"
               >
-                <h5>Home</h5>
+                <p>Home</p>
               </Link>
 
               <Link
                 className="nav-link text-white m-auto px-4 text-decoration-underline"
                 to="/user-profile/register-event"
               >
-                <h5>Register Event</h5>
+                <p>Register Event</p>
               </Link>
 
               <Link
                 className="nav-link text-white m-auto px-4 text-decoration-underline"
                 to="upcoming-events/"
               >
-                <h5>Upcoming Events</h5>
+                <p>Upcoming Events</p>
               </Link>
 
               {!userLoginStatus ? (
                 <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="login/">
-                  <h5>Login</h5>
+                  <p>Login</p>
                 </Link>
               ) : (
                 <Link
@@ -63,16 +63,16 @@ function Navbar() {
                   onClick={logoutUser}
                   to="login/"
                 >
-                  <h5>Logout</h5>
+                  <p>Logout</p>
                 </Link>
               )}
 
               <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="register/">
-                <h5>Sign Up</h5>
+                <p>Sign Up</p>
               </Link>
 
               <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="/">
-                <h5>About Us</h5>
+                <p>About Us</p>
               </Link>
             </div>
           </div>
