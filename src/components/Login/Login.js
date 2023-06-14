@@ -57,10 +57,10 @@ function Login() {
   return (
     <div className="mt-5">
       <div className=" d-flex flex-row flex-wrap justify-content-center">
-        <div className="justify-content-center align-items-center bg-dark card rounded-0 login-sideimg ">
+        <div className="justify-content-center shadow-lg align-items-center bg-dark card rounded-0 login-sideimg ">
           <h1 className="text-light bg-dark">Welcome to LEM!</h1>
         </div>
-        <div className="card rounded-0 login-form">
+        <div className="card shadow-lg rounded-0 login-form">
           <div className="card-body rounded-0 login-bg">
             {/* <h3 className="card-title text-center">Log in to Codepen</h3> */}
             {location?.state?.from.pathname ==

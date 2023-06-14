@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 function UpcomingEvents() {
   let navigate = useNavigate()
   return (
-    <div>
+    <div className='text-light'>
       <h1 className='text-center mt-4 mb-4'>Upcoming Events</h1>
       {/* <div className='d-flex flex-wrap'>
       {

@@ -32,7 +32,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
               <Link
-                className="nav-link text-white active m-auto"
+                className="nav-link text-white active m-auto px-4 text-decoration-underline"
                 aria-current="page"
                 to="/"
               >
@@ -40,26 +40,26 @@ function Navbar() {
               </Link>
 
               <Link
-                className="nav-link text-white m-auto ml-4"
+                className="nav-link text-white m-auto px-4 text-decoration-underline"
                 to="/user-profile/register-event"
               >
                 <h5>Register Event</h5>
               </Link>
 
               <Link
-                className="nav-link text-white m-auto ml-3"
+                className="nav-link text-white m-auto px-4 text-decoration-underline"
                 to="upcoming-events/"
               >
                 <h5>Upcoming Events</h5>
               </Link>
 
               {!userLoginStatus ? (
-                <Link className="nav-link text-white m-auto ml-3" to="login/">
+                <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="login/">
                   <h5>Login</h5>
                 </Link>
               ) : (
                 <Link
-                  className="nav-link text-white m-auto ml-3"
+                  className="nav-link text-white m-auto px-4 text-decoration-underline"
                   onClick={logoutUser}
                   to="login/"
                 >
@@ -67,8 +67,12 @@ function Navbar() {
                 </Link>
               )}
 
-              <Link className="nav-link text-white m-auto ml-4" to="register/">
+              <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="register/">
                 <h5>Sign Up</h5>
+              </Link>
+
+              <Link className="nav-link text-white m-auto px-4 text-decoration-underline" to="/">
+                <h5>About Us</h5>
               </Link>
             </div>
           </div>

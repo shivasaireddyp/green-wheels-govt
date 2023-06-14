@@ -69,7 +69,7 @@ function Register() {
   }
 
   return (
-    <div className="add-user">
+    <div className="add-user text-light">
       <h1 className=" text-center">Sign Up</h1>
       {/* form submission error */}
       {error.length !== 0 && (
