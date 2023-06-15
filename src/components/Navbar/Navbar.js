@@ -63,7 +63,7 @@ function Navbar() {
                 </Link>
               ) : (
                 <Link
-                  className="nav-link text-white m-auto px-4"
+                  className="nav-link text-white fw-bold m-auto px-4"
                   onClick={logoutUser}
                   to="login/"
                 >
