@@ -32,7 +32,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
               <Link
-                className="nav-link text-white active m-auto px-4"
+                className="nav-link text-white fw-bold active m-auto px-4"
                 aria-current="page"
                 to="/"
               >
@@ -40,21 +40,25 @@ function Navbar() {
               </Link>
 
               <Link
-                className="nav-link text-white m-auto px-4"
+                className="nav-link text-white fw-bold m-auto px-4"
                 to="/user-profile/register-event"
               >
                 <p>Register Event</p>
               </Link>
 
               <Link
-                className="nav-link text-white m-auto px-4"
+                className="nav-link text-white fw-bold m-auto px-4"
                 to="upcoming-events/"
               >
                 <p>Upcoming Events</p>
               </Link>
 
+              <Link className="nav-link text-white fw-bold m-auto px-4" to="about-us/">
+                <p>About Us</p>
+              </Link>
+
               {!userLoginStatus ? (
-                <Link className="nav-link text-white m-auto px-4" to="login/">
+                <Link className="nav-link text-white fw-bold m-auto px-4" to="login/">
                   <p>Login</p>
                 </Link>
               ) : (
@@ -67,12 +71,8 @@ function Navbar() {
                 </Link>
               )}
 
-              <Link className="nav-link text-white m-auto px-4" to="register/">
+              <Link className="nav-link text-white fw-bold m-auto px-4" to="register/">
                 <p>Sign Up</p>
-              </Link>
-
-              <Link className="nav-link text-white m-auto px-4" to="/">
-                <p>About Us</p>
               </Link>
             </div>
           </div>

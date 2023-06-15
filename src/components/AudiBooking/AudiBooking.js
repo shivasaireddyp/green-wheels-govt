@@ -44,7 +44,7 @@ function AudiBooking() {
         <h1 style={{ fontSize: "7vw" }} className="text-center text-light mb-2">
           Discover. Book. Experience.
         </h1>
-        <h2 className="text-center text-light">Lyrik Event Management</h2>
+        <h2 className="text-center fw-bold text-light">Lyrik Event Management</h2>
         <h5 className="text-center text-light">
           "Elevating Experiences, Crafting Unforgettable Moments"
         </h5>
@@ -58,7 +58,7 @@ function AudiBooking() {
         </p>
       </div>
       <div>
-        <h1 className="text-center mt-4 text-light">Auditoriums & Theaters</h1>
+        <h1 className="text-center fw-bold mt-4 text-light">Auditoriums & Theaters</h1>
         <p className="text-center text-light  ">
           Check out the available auditoriums, more additions soon!
         </p>
@@ -67,7 +67,7 @@ function AudiBooking() {
         <div className="row row-cols-1 row-cols-md-3 g-4">
           {audis.map((audi) => (
             <div key={audis._id}>
-              <div className="col for-cards ">
+              <div className="col bg-dark for-cards ">
                 <div className="h-50 text-light">
                   <div>
                     <img

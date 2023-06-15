@@ -58,16 +58,16 @@ function Login() {
     <div className="mt-5">
       <div className=" d-flex flex-row flex-wrap justify-content-center">
         <div className="justify-content-center shadow-lg align-items-center bg-dark card rounded-0 login-sideimg ">
-          <h1 className="text-light bg-dark">Welcome to LEM!</h1>
+          <h1 className="text-light fw-bold bg-dark">Welcome to LEM!</h1>
         </div>
         <div className="card shadow-lg rounded-0 login-form">
           <div className="card-body rounded-0 login-bg">
             {/* <h3 className="card-title text-center">Log in to Codepen</h3> */}
             {location?.state?.from.pathname ==
             "/user-profile/register-event" ? (
-              <h1 className="text-light text-center">Login to Continue</h1>
+              <h1 className="text-light fw-bold text-center">Login to Continue</h1>
             ) : (
-              <h1 className="text-center text-light">Login</h1>
+              <h1 className="text-center fw-bold text-light">Login</h1>
             )}
             {error ? (
               <p className="display-3 text-danger text-center">{error}</p>

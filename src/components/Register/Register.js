@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Register() {
   //error state
   let [error, setError] = useState("");
-  let [selectedFile,setSelectedFile] = useState(null)
+  let [selectedFile, setSelectedFile] = useState(null);
 
   //navigate
   const navigate = useNavigate();
@@ -22,27 +22,26 @@ function Register() {
   //adding new user
   let addNewUser = (newUser) => {
     console.log(newUser);
-    
-    let fd=new FormData();
+
+    let fd = new FormData();
     //append newUser to form data
-    fd.append("user",JSON.stringify(newUser))
+    fd.append("user", JSON.stringify(newUser));
     //append selected file to form data
-    fd.append("userimage",selectedFile)
+    fd.append("userimage", selectedFile);
     // let fd=new FormData();
     //append newUser to form data
     // fd.append("user",JSON.stringify(newUser))
-    
+
     //make HTTP POST req to save newUser to localAPI
     axios
-      .post("http://localhost:4000/users-api/register-user",fd)
+      .post("http://localhost:4000/users-api/register-user", fd)
       .then((response) => {
-        
         if (response.status === 201) {
           //naviagte to login componentxp
-          navigate('/login')
+          navigate("/login");
         }
-        if(response.status!==201){
-          setError(response.data.message)
+        if (response.status !== 201) {
+          setError(response.data.message);
         }
       })
       .catch((err) => {
@@ -60,114 +59,156 @@ function Register() {
           setError(err.message);
         }
       });
-  
   };
 
-  const onFileSelect=(e)=>{
-    console.log(e.target.files[0])
-    setSelectedFile(e.target.files[0])
-  }
+  const onFileSelect = (e) => {
+    console.log(e.target.files[0]);
+    setSelectedFile(e.target.files[0]);
+  };
 
   return (
-    <div className="add-user text-light">
-      <h1 className=" text-center">Sign Up</h1>
-      {/* form submission error */}
-      {error.length !== 0 && (
-        <p className="display-3 text-danger text-center">{error}</p>
-      )}
-      {/* add user form */}
-      <div className="row">
-        <div className="col-11 col-sm-8 col-md-6 mx-auto">
-          <form onSubmit={handleSubmit(addNewUser)}>
-            {/* username */}
-            <div className="mb-3">
-              <label htmlFor="name">Username</label>
-              <input
-                type="text"
-                id="username"
-                className="form-control"
-                placeholder="e.g. John"
-                {...register("username", { required: true })}
-              />
-              {/* validation errors for name */}
-              {errors.username?.type === "required" && (
-                <p className="text-danger fw-bold fs-5">
-                  * Username is required
-                </p>
-              )}
+    <div>
+      <div>
+        <section className="vh-100">
+          <div className="container h-100">
+            {error.length !== 0 && (
+              <p className="display-6 text-light text-center">{error}</p>
+            )}
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col-lg-12 col-xl-11">
+                <div
+                  className="card text-light bg-dark"
+                  style={{ borderRadius: "25px" }}
+                >
+                  <div className="card-body p-md-5">
+                    <div className="row justify-content-center">
+                      <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                        <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                          Sign up
+                        </p>
+
+                        <form
+                          onSubmit={handleSubmit(addNewUser)}
+                          className="mx-1 mx-md-4"
+                        >
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            {/* <i className="fas fa-user fa-lg me-3 fa-fw"></i> */}
+                            <div className="form-outline flex-fill mb-0">
+                              <input
+                                type="text"
+                                id="username"
+                                className="form-control"
+                                placeholder="Username"
+                                {...register("username", { required: true })}
+                              />
+                              {errors.username?.type === "required" && (
+                                <p className="text-light fs-6">
+                                  *required field
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            {/* <i className="fas fa-lock fa-lg me-3 fa-fw"></i> */}
+                            <div className="form-outline flex-fill mb-0">
+                              <input
+                                type="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Password"
+                                {...register("password", { required: true })}
+                              />
+                              {errors.password?.type === "required" && (
+                                <p className="text-light fs-6">
+                                  *required field
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            {/* <i className="fas fa-envelope fa-lg me-3 fa-fw"></i> */}
+                            <div className="form-outline flex-fill mb-0">
+                              <input
+                                type="email"
+                                id="email"
+                                className="form-control"
+                                placeholder="Your Email"
+                                {...register("email", { required: true })}
+                              />
+                              {errors.email?.type === "required" && (
+                                <p className="text-light fs-6">
+                                  *required field
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            {/* <i className="fas fa-key fa-lg me-3 fa-fw"></i> */}
+                            <div className="form-outline flex-fill mb-0">
+                              <label htmlFor="dob">Date of birth</label>
+                              <input
+                                type="date"
+                                id="dob"
+                                className="form-control"
+                                placeholder="Date of Birth"
+                                {...register("dob", { required: true })}
+                              />
+                              {errors.dob?.type === "required" && (
+                                <p className="text-light fs-6">
+                                  *required field
+                                </p>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="d-flex flex-row align-items-center mb-4">
+                            {/* <i className="fas fa-key fa-lg me-3 fa-fw"></i> */}
+                            <div className="form-outline flex-fill mb-0">
+                              <label htmlFor="userimage">
+                                Select Profile Picture
+                              </label>
+                              <input
+                                type="file"
+                                id="userimage"
+                                className="form-control"
+                                placeholder="Date of Birth"
+                                {...register("userimage")}
+                                onInput={onFileSelect}
+                              />
+                              {/* {errors.username?.type === "required" && (
+                                <p className="text-light fs-6">
+                                  *required field
+                                </p>
+                              )} */}
+                            </div>
+                          </div>
+
+                          <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button
+                              className="btn btn-primary btn-lg"
+                            >
+                              Register
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                        <img
+                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                          className="img-fluid"
+                          alt="Sample image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* password */}
-            <div className="mb-3">
-              <label htmlFor="name">Password</label>
-              <input
-                type="password"
-                placeholder="*********"
-                id="password"
-                className="form-control"
-                {...register("password", { required: true })}
-              />
-              {/* validation errors for name */}
-              {errors.password?.type === "required" && (
-                <p className="text-danger fw-bold fs-5">
-                  * Password is required
-                </p>
-              )}
-            </div>
-            {/* email */}
-            <div className="mb-3">
-              <label htmlFor="name">Email</label>
-              <input
-                type="email"
-                placeholder="e.g. example@mail.com"
-                id="email"
-                className="form-control"
-                {...register("email", { required: true })}
-              />
-              {/* validation errors for email */}
-              {errors.email?.type === "required" && (
-                <p className="text-danger fw-bold fs-5">* Email is required</p>
-              )}
-            </div>
-            {/* date of birth */}
-            <div className="mb-3">
-              <label htmlFor="dob">Date of birth</label>
-              <input
-                type="date"
-                id="dob"
-                className="form-control"
-                {...register("dob", { required: true })}
-              />
-              {/* validation errors for name */}
-              {errors.dob?.type === "required" && (
-                <p className="text-danger fw-bold fs-5">
-                  *Date of birth is required
-                </p>
-              )}
-            </div>
-            {/* profile picture select */}
-            <div className="mb-3">
-              <label htmlFor="user-image">Select a Profile Picture:</label>
-              <input
-                type="file"
-                id="userimage"
-                className="form-control"
-                // placeholder="e.g. John"
-                {...register("userimage", { required: true })}
-                onInput={onFileSelect}
-              />
-              {/* validation errors for name */}
-              {errors.username?.type === "required" && (
-                <p className="text-danger fw-bold fs-5">
-                  Image is required
-                </p>
-              )}
-            </div>
-            {/* submit button */}
-            <button type="submit" className="btn btn-primary">
-              Regsiter
-            </button>
-          </form>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
   );
