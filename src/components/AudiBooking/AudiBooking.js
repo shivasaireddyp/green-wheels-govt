@@ -50,13 +50,8 @@ function AudiBooking() {
         <h5 className="text-center text-light">
           "Elevating Experiences, Crafting Unforgettable Moments"
         </h5>
-        {/* <p className="text-center text-light">
-          One destination to make your events super successful!
-          <br />
-          Check out upcoming events and functions
-        </p> */}
         <p className="text-center text-light">
-          Not registered with us? <Link to="/register">Join now!</Link>
+          Not registered with us? <Link className="text-decoration-none" to="/register">Join Now!</Link>
         </p>
       </div>
       <div>
@@ -93,7 +88,7 @@ function AudiBooking() {
                     <p className=" ">Contact : {audi.contact}</p>
                   </div>
                   <div className="text-center props">
-                    <a className="d-block float-start mb-2" href="#">
+                    <a className="d-block float-start mb-2 text-decoration-none" href="#">
                       Check out past events here
                     </a>
                     <button

@@ -13,9 +13,6 @@ function Login() {
   const location = useLocation();
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
-  // if(location.state?.from){
-  //   navigate(location.state.from)
-  // }
 
   //error state
   let [pageHead, setPageHead] = useState("Login");
@@ -44,15 +41,11 @@ function Login() {
       } else {
         navigate("/user-profile");
       }
-      console.log("login successful");
+      // console.log("login successful");
     } else {
-      console.log("not success");
+      // console.log("not success");
     }
   }, [userLoginStatus]);
-
-  //  if(location.state.from.pathname==='/user-profile/register-event'){
-  //   // setPageHead("Login to Continue")
-  //  }
 
   return (
     <div>

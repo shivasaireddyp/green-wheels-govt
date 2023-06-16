@@ -1,5 +1,4 @@
 .cardm{
-	background-color: black;
 	/* width: 280px; */
     /* height: 350px; */
 	border-radius: 33px;
@@ -52,7 +51,11 @@
 }
 
 .reg-form {
-    background-color: black;
+    /* background-color: black; */
     border-radius: 33px;
 	padding: 2rem !important;
+}
+
+.main-cont {
+	margin: 10px;
 }

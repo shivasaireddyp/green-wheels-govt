@@ -14,11 +14,11 @@ function Userprofile() {
     useContext(loginContext);
   if (userLoginStatus) {
     return (
-      <div className="container text-light">
+      <div className="text-light main-cont">
         <h1>Dashboard</h1>
         <div className="row row-cols-1 g-3">
           <div className="col-md-3">
-            <div className="cardm">
+            <div className="cardm bg-dark">
               <div className="top-container">
                 <img
                   src={currentUser.image}
@@ -45,7 +45,7 @@ function Userprofile() {
               </div>
             </div>
           </div>
-          <div className="reg-form col-md-8">
+          <div className="reg-form bg-dark col-md-8">
             <div className="">
               <Outlet />
             </div>
@@ -56,25 +56,6 @@ function Userprofile() {
   } else {
     return <Navigate to={"/login"} replace state={{ from: location }} />;
   }
-
-  // return (
-  // <div>
-  //   <h2>Dashboard</h2>
-  //   <p>Welcome, {currentUser.username}</p>
-  //   {/* <Link to="/user-profile/register-event">
-  //     <button>Register Event with us</button>
-  //   </Link> */}
-
-  //     if(userLoginStatus){
-  //       <Outlet />
-  //     }
-  //     else{
-  //       <Navigate to={'/login'}/>
-  //     }
-
-  //   {/* <button className='btn btn-primary' onClick={navigate('/user-profile/register-event/')}>Register an event with us</button> */}
-  // </div>
-  // )
 }
 
 export default Userprofile;
