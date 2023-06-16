@@ -17,13 +17,13 @@ function Userprofile() {
       <div className="container text-light">
         <h1>Dashboard</h1>
         <div className="row row-cols-1 g-3">
-          <div className="col-md-4">
+          <div className="col-md-3">
             <div className="cardm">
               <div className="top-container">
                 <img
                   src={currentUser.image}
                   className="img-fluid profile-image"
-                  style={{ width: "100" }}
+                  // style={{ width: "100" }}
                 ></img>
                 <div className="">
                   <h3 className="name mt-1">@{currentUser.username}</h3>

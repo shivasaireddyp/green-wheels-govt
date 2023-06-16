@@ -4,12 +4,27 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import {MdOutlineNavigateNext} from "react-icons/md"
+import { MdOutlineNavigateNext } from "react-icons/md";
 
 function Register() {
   //error state
   let [error, setError] = useState("");
+  let [passError, setPassError] = useState("")
   let [selectedFile, setSelectedFile] = useState(null);
+
+  const validate = (value) => {
+
+    console.log(value)
+ 
+    // if (validator.isStrongPassword(value, {
+    //   minLength: 8, minLowercase: 1,
+    //   minUppercase: 1, minNumbers: 1, minSymbols: 1
+    // })) {
+    //   setErrorMessage('Is Strong Password')
+    // } else {
+    //   setErrorMessage('Is Not Strong Password')
+    // }
+  }
 
   //navigate
   const navigate = useNavigate();
@@ -71,8 +86,8 @@ function Register() {
   return (
     <div>
       <div>
-        <section className="vh-100">
-          <div className="container h-100" >
+        <section className="vh-100 mb-4">
+          <div className="container h-100">
             {error.length !== 0 && (
               <p className="display-6 text-light text-center">{error}</p>
             )}
@@ -93,14 +108,15 @@ function Register() {
                           onSubmit={handleSubmit(addNewUser)}
                           className="mx-1 mx-md-4"
                         >
-                          <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="d-flex flex-row align-items-center mb-2">
                             {/* <i className="fas fa-user fa-lg me-3 fa-fw"></i> */}
                             <div className="form-outline flex-fill mb-0">
+                              <label htmlFor="username">Username</label>
                               <input
                                 type="text"
                                 id="username"
                                 className="form-control"
-                                placeholder="Username"
+                                placeholder="e.g. steven"
                                 {...register("username", { required: true })}
                               />
                               {errors.username?.type === "required" && (
@@ -111,14 +127,16 @@ function Register() {
                             </div>
                           </div>
 
-                          <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="d-flex flex-row align-items-center mb-2">
                             {/* <i className="fas fa-lock fa-lg me-3 fa-fw"></i> */}
                             <div className="form-outline flex-fill mb-0">
+                              <label htmlFor="password">Password</label>
                               <input
                                 type="password"
                                 id="password"
                                 className="form-control"
                                 placeholder="Password"
+                                onChange={(e)=>validate(e.target.value)}
                                 {...register("password", { required: true })}
                               />
                               {errors.password?.type === "required" && (
@@ -129,9 +147,10 @@ function Register() {
                             </div>
                           </div>
 
-                          <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="d-flex flex-row align-items-center mb-2">
                             {/* <i className="fas fa-envelope fa-lg me-3 fa-fw"></i> */}
                             <div className="form-outline flex-fill mb-0">
+                              <label htmlFor="email">Mail</label>
                               <input
                                 type="email"
                                 id="email"
@@ -147,7 +166,7 @@ function Register() {
                             </div>
                           </div>
 
-                          <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="d-flex flex-row align-items-center mb-2">
                             {/* <i className="fas fa-key fa-lg me-3 fa-fw"></i> */}
                             <div className="form-outline flex-fill mb-0">
                               <label htmlFor="dob">Date of birth</label>
@@ -166,7 +185,7 @@ function Register() {
                             </div>
                           </div>
 
-                          <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="d-flex flex-row align-items-center mb-2">
                             {/* <i className="fas fa-key fa-lg me-3 fa-fw"></i> */}
                             <div className="form-outline flex-fill mb-0">
                               <label htmlFor="userimage">
@@ -180,32 +199,28 @@ function Register() {
                                 {...register("userimage")}
                                 onInput={onFileSelect}
                               />
-                              {/* {errors.username?.type === "required" && (
-                                <p className="text-light fs-6">
-                                  *required field
-                                </p>
-                              )} */}
                             </div>
                           </div>
 
-                          <div className="d-flex justify-content-center mx-4 mb-lg-4">
-                            <button
-                              className="btn btn-primary btn-lg"
-                            >
+                          <div className="d-flex justify-content-center mx-4 mb-lg-2">
+                            <button className="btn btn-lg" style={{ backgroundColor: "#AA77FF" }}>
                               Register
                             </button>
                           </div>
-                          <div className="sign-up d-block text-light">
-                          Already registered?{" "}
-                          <Link className="text-decoration-none" to="/login">
-                            Login<span><MdOutlineNavigateNext /> </span>
-                          </Link>
-                        </div>
+                          <div className="sign-up text-light">
+                            Already registered?{" "}
+                            <Link className="text-decoration-none" to="/login">
+                              Login
+                              <span>
+                                <MdOutlineNavigateNext />{" "}
+                              </span>
+                            </Link>
+                          </div>
                         </form>
                       </div>
                       <div className="col-md-10 col-lg-6 col-xl-7 d-flex order-1 order-lg-2">
                         <img
-                          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                          src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7885.jpg?w=2000"
                           className="img-fluid rounded"
                           alt="Sample image"
                         />

@@ -39,9 +39,6 @@ function Aboutus() {
           <div className="row mb-4">
             <div className="col-lg-5">
               <h2 className="fw-bold">Our team</h2>
-              <p className="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </p>
             </div>
           </div>
 
@@ -83,7 +80,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
                   alt=""
@@ -119,7 +116,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
                   alt=""
@@ -155,7 +152,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""
@@ -191,7 +188,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""

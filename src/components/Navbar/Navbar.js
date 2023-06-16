@@ -32,7 +32,7 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav ms-auto">
               <Link
-                className="nav-link text-white fw-bold active m-auto px-4"
+                className="nav-link text-white fw-bold active m-auto px-5"
                 aria-current="page"
                 to="/"
               >
@@ -40,40 +40,145 @@ function Navbar() {
               </Link>
 
               <Link
-                className="nav-link text-white fw-bold m-auto px-4"
+                className="nav-link text-white fw-bold m-auto px-5"
                 to="/user-profile/register-event"
               >
                 <p>Register Event</p>
               </Link>
 
               <Link
-                className="nav-link text-white fw-bold m-auto px-4"
+                className="nav-link text-white fw-bold m-auto px-5"
                 to="upcoming-events/"
               >
                 <p>Upcoming Events</p>
               </Link>
 
-              <Link className="nav-link text-white fw-bold m-auto px-4" to="about-us/">
+              <Link
+                className="nav-link text-white fw-bold m-auto px-5"
+                to="about-us/"
+              >
                 <p>About Us</p>
               </Link>
 
               {!userLoginStatus ? (
-                <Link className="nav-link text-white fw-bold m-auto px-4" to="login/">
+                <Link
+                  className="nav-link text-white fw-bold m-auto px-5"
+                  to="login/"
+                >
                   <p>Login</p>
                 </Link>
               ) : (
-                <Link
-                  className="nav-link text-white fw-bold m-auto px-4"
-                  onClick={logoutUser}
-                  to="login/"
-                >
-                  <p>Logout</p>
+                <Link class="nav-link text-white fw-bold m-auto px-5 dropdown">
+                  <p
+                    class=" dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {currentUser.username}
+                  </p>
+                  <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-start dropdown-menu-sm-start dropdown-menu-md-start">
+                    <li>
+                      <Link class="dropdown-item fw-bold" to="user-profile/">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class="dropdown-item fw-bold"
+                        to="user-profile/booking-history/"
+                      >
+                        History
+                      </Link>
+                    </li>
+                    <li>
+                      {/* <Link class="dropdown-item" to="#">
+                        History
+                      </Link> */}
+                      <Link
+                        className="dropdown-item fw-bold"
+                        onClick={logoutUser}
+                        to="login/"
+                      >
+                        Logout
+                      </Link>
+                    </li>
+                  </ul>
                 </Link>
               )}
 
-              <Link className="nav-link text-white fw-bold m-auto px-4" to="register/">
-                <p>Sign Up</p>
-              </Link>
+              {/* {userLoginStatus ? (
+                <Link class="nav-link text-white fw-bold m-auto px-5 dropdown">
+                  <p
+                    class=" dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {currentUser.username}
+                  </p>
+                  <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-start dropdown-menu-sm-start dropdown-menu-md-start">
+                    <li>
+                      <Link class="dropdown-item" to="user-profile/">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        class="dropdown-item"
+                        to="user-profile/booking-history/"
+                      >
+                        Favourites
+                      </Link>
+                    </li>
+                    <li>
+                      <Link class="dropdown-item" to="#">
+                        History
+                      </Link>
+                    </li>
+                  </ul>
+                </Link>
+              ) : (
+                <Link
+                  className="nav-link text-white fw-bold m-auto px-5"
+                  to="register/"
+                >
+                  <p>Sign Up</p>
+                </Link>
+              )} */}
+
+              {userLoginStatus === false && (
+                <Link
+                  className="nav-link text-white fw-bold m-auto px-5"
+                  to="register/"
+                >
+                  <p>Sign Up</p>
+                </Link>
+              )}
+              {/* <Link class="nav-link text-white fw-bold m-auto px-5 dropstart">
+                <p
+                  class=" dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profile
+                </p>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Action
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Another action
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Something else here
+                    </a>
+                  </li>
+                </ul>
+              </Link> */}
             </div>
           </div>
         </div>

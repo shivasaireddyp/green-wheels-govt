@@ -128,8 +128,8 @@ function Login() {
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button className="btn btn-primary btn-lg">
-                            Login
+                          <button className="btn btn-lg" style={{ backgroundColor: "#AA77FF" }}>
+                            Log in
                           </button>
                         </div>
                         <div className="sign-up d-block text-light mt-1">
@@ -142,7 +142,7 @@ function Login() {
                     </div>
                     <div className="col-md-6 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        src="https://images.unsplash.com/photo-1478147427282-58a87a120781?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100"
                         className="img-fluid rounded"
                         alt="Sample image"
                       />
