@@ -50,11 +50,11 @@ function AudiBooking() {
         <h5 className="text-center text-light">
           "Elevating Experiences, Crafting Unforgettable Moments"
         </h5>
-        <p className="text-center text-light">
+        {/* <p className="text-center text-light">
           One destination to make your events super successful!
           <br />
           Check out upcoming events and functions
-        </p>
+        </p> */}
         <p className="text-center text-light">
           Not registered with us? <Link to="/register">Join now!</Link>
         </p>

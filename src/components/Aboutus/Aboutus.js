@@ -16,7 +16,15 @@ function Aboutus() {
           <div className="row h-100 align-items-center py-5">
             <div className="col-lg-6">
               <h1 className="fw-bold">About us</h1>
-              <p className="leadmb-0">Lyrik Event Management</p>
+              <p className="leadmb-2 fw-bold">Lyrik Event Management</p>
+              <p className="lead">
+                Welcome to Lyrik Event Management, where we bring your events to
+                life. With a passion for creativity and meticulous attention to
+                detail, we specialize in planning and executing memorable
+                experiences. From corporate gatherings to weddings and
+                celebrations, trust us to handle every aspect of your event,
+                ensuring a seamless and unforgettable occasion.
+              </p>
               <p className="lead">
                 By{" "}
                 <a href="#" className="text-decoration-none">
@@ -51,7 +59,7 @@ function Aboutus() {
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Shiva Sai Reddy</h5>
+                <h5 className="mb-0">Shiva Sai P</h5>
                 <span className="small text-uppercase text-muted">
                   CEO - Founder
                 </span>
@@ -80,14 +88,14 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Sai Eswar</h5>
+                <h5 className="mb-0">Sai Eswar C</h5>
                 <span className="small text-uppercase text-muted">
                   CEO - Founder
                 </span>
@@ -116,14 +124,14 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
                   alt=""
                   width="100"
                   className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
                 />
-                <h5 className="mb-0">Sai Pranay</h5>
+                <h5 className="mb-0">Sai Pranay C</h5>
                 <span className="small text-uppercase text-muted">
                   CEO - Founder
                 </span>
@@ -152,7 +160,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""
@@ -188,7 +196,7 @@ function Aboutus() {
               </div>
             </div>
             <div className="col-xl-3 col-sm-6 mb-5">
-              <div  className=" bg-dark rounded shadow-sm py-5 px-4">
+              <div className=" bg-dark rounded shadow-sm py-5 px-4">
                 <img
                   src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
                   alt=""
