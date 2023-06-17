@@ -28,7 +28,7 @@ function AudiBooking() {
 
   const handleAuditoriumClick = (audi) => {
     selectAuditorium(audi);
-    navigate("/user-profile/register-event");
+    navigate("/register-event");
   };
 
   //   console.log(audis);

@@ -12,7 +12,7 @@ const multerObj = require('./middlewares/cloudinaryConfig')
 
 audiApp.use(exp.json())
 
-audiApp.get('/audis',expressAsyncHandler(
+audiApp.get('/audis',verifyToken,expressAsyncHandler(
     async(request,response)=>{
         const audisCollection = request.app.get('audisCollection')
         let allAudis = await audisCollection.find().toArray();

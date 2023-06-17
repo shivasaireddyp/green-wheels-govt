@@ -41,7 +41,7 @@ function Navbar() {
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="/user-profile/register-event"
+                to="register-event"
               >
                 <p>Register Event</p>
               </Link>
@@ -63,7 +63,7 @@ function Navbar() {
               {!userLoginStatus ? (
                 <Link
                   className="nav-link text-white fw-bold m-auto px-5"
-                  to="login/"
+                  to="login"
                 >
                   <p>Login</p>
                 </Link>
@@ -85,7 +85,7 @@ function Navbar() {
                     <li>
                       <Link
                         class="dropdown-item fw-bold"
-                        to="user-profile/booking-history"
+                        to="booking-history"
                       >
                         History
                       </Link>
@@ -148,7 +148,7 @@ function Navbar() {
               {userLoginStatus === false && (
                 <Link
                   className="nav-link text-white fw-bold m-auto px-5"
-                  to="register/"
+                  to="register"
                 >
                   <p>Sign Up</p>
                 </Link>

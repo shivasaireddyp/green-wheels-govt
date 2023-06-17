@@ -31,27 +31,27 @@ function Userprofile() {
               </div>
               <div className="recent-border mt-4">
                 <span className="recent-orders">
-                  <Link className="text-decoration-none" to="/">
+                  <Link className="text-decoration-none" to="/booking-history">
                     Booking History
                   </Link>
                 </span>
               </div>
               <div className="wishlist-border pt-2">
                 <span className="wishlist">
-                  <Link className="text-decoration-none" to="/">
+                  <Link className="text-decoration-none" to="#">
                     Wishlist
                   </Link>
                 </span>
               </div>
             </div>
           </div>
-          {location.pathname !== "/user-profile" && (
+          {/* {location.pathname !== "/user-profile" && (
             <div className="reg-form bg-dark col-md-8">
               <div>
                 <Outlet />
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     );
