@@ -44,7 +44,6 @@ function Navbar() {
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
                 to="register-event"
-                // onClick={}
               >
                 <p>Register Event</p>
               </Link>
