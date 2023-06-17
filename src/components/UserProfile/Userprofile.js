@@ -45,11 +45,13 @@ function Userprofile() {
               </div>
             </div>
           </div>
-          <div className="reg-form bg-dark col-md-8">
-            <div className="">
-              <Outlet />
+          {location.pathname !== "/user-profile" && (
+            <div className="reg-form bg-dark col-md-8">
+              <div>
+                <Outlet />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     );

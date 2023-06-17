@@ -48,14 +48,14 @@ function Navbar() {
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="upcoming-events/"
+                to="upcoming-events"
               >
                 <p>Upcoming Events</p>
               </Link>
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="about-us/"
+                to="about-us"
               >
                 <p>About Us</p>
               </Link>
@@ -78,14 +78,14 @@ function Navbar() {
                   </p>
                   <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-start dropdown-menu-sm-start dropdown-menu-md-start">
                     <li>
-                      <Link class="dropdown-item fw-bold" to="user-profile/">
+                      <Link class="dropdown-item fw-bold" to="user-profile">
                         Profile
                       </Link>
                     </li>
                     <li>
                       <Link
                         class="dropdown-item fw-bold"
-                        to="user-profile/booking-history/"
+                        to="user-profile/booking-history"
                       >
                         History
                       </Link>
