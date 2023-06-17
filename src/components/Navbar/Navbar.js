@@ -5,6 +5,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { loginContext } from "../../contexts/loginContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import {BsPersonFill} from "react-icons/bs"
+
 
 function Navbar() {
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
@@ -74,7 +76,7 @@ function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    {currentUser.username}
+                    <BsPersonFill />{" "}{currentUser.username}
                   </p>
                   <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-start dropdown-menu-sm-start dropdown-menu-md-start">
                     <li>

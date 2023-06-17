@@ -16,7 +16,6 @@ function AudiBooking() {
       axios
         .get("http://localhost:4000/audis-api/audis")
         .then((response) => {
-          // console.log(response.data.payload)
           setAudis([...response.data.payload]);
         })
         .catch((err) => {
@@ -51,7 +50,10 @@ function AudiBooking() {
           "Elevating Experiences, Crafting Unforgettable Moments"
         </h5>
         <p className="text-center text-light">
-          Not registered with us? <Link className="text-decoration-none" to="/register">Join Now!</Link>
+          Not registered with us?{" "}
+          <Link className="text-decoration-none" to="/register">
+            Join Now!
+          </Link>
         </p>
       </div>
       <div>
@@ -88,7 +90,10 @@ function AudiBooking() {
                     <p className=" ">Contact : {audi.contact}</p>
                   </div>
                   <div className="text-center props">
-                    <a className="d-block float-start mb-2 text-decoration-none" href="#">
+                    <a
+                      className="d-block float-start mb-2 text-decoration-none"
+                      href="#"
+                    >
                       Check out past events here
                     </a>
                     <button

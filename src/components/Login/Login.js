@@ -49,7 +49,7 @@ function Login() {
 
   return (
     <div>
-      <section className="vh-100">
+      <section className="mt-4">
         <div className="container h-100">
           {error.length !== 0 && (
             <p className="display-6 text-light text-center">{error}</p>

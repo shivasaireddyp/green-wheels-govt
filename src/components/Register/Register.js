@@ -86,7 +86,7 @@ function Register() {
   return (
     <div>
       <div>
-        <section className="vh-100 mb-4">
+        <section className="vh-100 mb-4 mt-4">
           <div className="container h-100">
             {error.length !== 0 && (
               <p className="display-6 text-light text-center">{error}</p>
