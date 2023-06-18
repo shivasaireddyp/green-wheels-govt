@@ -2,11 +2,9 @@ import React, { useState, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { loginContext } from "../../contexts/loginContext";
-// import { useNavigate } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Login.css";
-// import { useState } from 'react'
 
 function Login() {
   const navigate = useNavigate();
@@ -31,8 +29,6 @@ function Login() {
     //  console.log(userCredObj)
     loginUser(userCredObj);
   };
-
-  //  console.log(location?.state?.from.pathname)
 
   useEffect(() => {
     if (userLoginStatus == true) {
@@ -63,9 +59,8 @@ function Login() {
                 <div className="card-body p-md-5">
                   <div className="row justify-content-center">
                     <div className="col-md-6 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      {(location?.state?.from.pathname ==
-                      "/register-event")|| (location?.state?.from.pathname ==
-                        "/booking-history") ? (
+                      {location?.state?.from.pathname == "/register-event" ||
+                      location?.state?.from.pathname == "/booking-history" ? (
                         <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                           Login to Continue
                         </p>
@@ -75,9 +70,7 @@ function Login() {
                         </p>
                       )}
                       {error ? (
-                        <p className="display-3 text-danger text-center">
-                          {error}
-                        </p>
+                        <p className="text-light text-center">{error}</p>
                       ) : (
                         ""
                       )}
@@ -97,7 +90,9 @@ function Login() {
                               {...register("username", { required: true })}
                             />
                             {errors.username?.type === "required" && (
-                              <p className="text-light fs-6">*required field</p>
+                              <p className="text-primary fs-6">
+                                *required field
+                              </p>
                             )}
                           </div>
                         </div>
@@ -112,17 +107,22 @@ function Login() {
                               placeholder="Password"
                               {...register("password", { required: true })}
                             />
+                            {errors.password?.type === "required" && (
+                              <p className="text-primary fs-6">
+                                *required field
+                              </p>
+                            )}
                             <a href="#" className="text-decoration-none">
                               Forgot password
                             </a>
-                            {errors.password?.type === "required" && (
-                              <p className="text-light fs-6">*required field</p>
-                            )}
                           </div>
                         </div>
 
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button className="btn btn-lg" style={{ backgroundColor: "#AA77FF" }}>
+                          <button
+                            className="btn btn-lg"
+                            style={{ backgroundColor: "#AA77FF" }}
+                          >
                             Log in
                           </button>
                         </div>

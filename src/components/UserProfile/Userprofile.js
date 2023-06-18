@@ -1,14 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { loginContext } from "../../contexts/loginContext";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Outlet, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./Userprofile.css";
 
 function Userprofile() {
-  let navigate = useNavigate();
   let location = useLocation();
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
@@ -45,13 +43,6 @@ function Userprofile() {
               </div>
             </div>
           </div>
-          {/* {location.pathname !== "/user-profile" && (
-            <div className="reg-form bg-dark col-md-8">
-              <div>
-                <Outlet />
-              </div>
-            </div>
-          )} */}
         </div>
       </div>
     );

@@ -32,7 +32,7 @@ function AudiBooking() {
 
   const handleAuditoriumClick = (audi) => {
     selectAuditorium(audi);
-    navigate('/register-event')
+    navigate("/register-event");
     // <Navigate to="/register-event" state={{from: location}}/>
   };
 
@@ -67,10 +67,10 @@ function AudiBooking() {
         </p>
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-3">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
           {audis.map((audi) => (
             <div key={audis._id}>
-              <div className="col bg-dark for-cards ">
+              <div className="col bg-dark for-cards">
                 <div className="h-50 text-light">
                   <div>
                     <img

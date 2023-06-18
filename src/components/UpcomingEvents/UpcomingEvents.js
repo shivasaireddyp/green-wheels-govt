@@ -1,11 +1,7 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import events from "../../../src/db.json";
-import { useNavigate } from "react-router-dom";
+// import events from "../../../src/db.json";
 
 function UpcomingEvents() {
-  let navigate = useNavigate();
   return (
     <div className="text-light">
       <h1 className="text-center fw-bold mt-4 mb-4">Upcoming Events</h1>
@@ -30,7 +26,11 @@ function UpcomingEvents() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1179&q=100" className="d-block w-100" alt="..." />
+              <img
+                src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1179&q=100"
+                className="d-block w-100"
+                alt="..."
+              />
               <div className="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>
@@ -39,7 +39,11 @@ function UpcomingEvents() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100" className="d-block w-100" alt="..." />
+              <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100"
+                className="d-block w-100"
+                alt="..."
+              />
               <div className="carousel-caption d-none d-md-block">
                 <h5>First slide label</h5>
                 <p>

@@ -44,9 +44,6 @@ function Register() {
     fd.append("user", JSON.stringify(newUser));
     //append selected file to form data
     fd.append("userimage", selectedFile);
-    // let fd=new FormData();
-    //append newUser to form data
-    // fd.append("user",JSON.stringify(newUser))
 
     //make HTTP POST req to save newUser to localAPI
     axios
@@ -88,7 +85,7 @@ function Register() {
         <section className="vh-100 mb-4 mt-4">
           <div className="container h-100">
             {error.length !== 0 && (
-              <p className="display-6 text-light text-center">{error}</p>
+              <p className="text-light text-center">{error}</p>
             )}
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-lg-12 col-xl-11">
@@ -119,7 +116,7 @@ function Register() {
                                 {...register("username", { required: true })}
                               />
                               {errors.username?.type === "required" && (
-                                <p className="text-light fs-6">
+                                <p className="text-primary fs-6">
                                   *required field
                                 </p>
                               )}
@@ -139,7 +136,7 @@ function Register() {
                                 {...register("password", { required: true })}
                               />
                               {errors.password?.type === "required" && (
-                                <p className="text-light fs-6">
+                                <p className="text-primary fs-6">
                                   *required field
                                 </p>
                               )}
@@ -158,7 +155,7 @@ function Register() {
                                 {...register("email", { required: true })}
                               />
                               {errors.email?.type === "required" && (
-                                <p className="text-light fs-6">
+                                <p className="text-primary fs-6">
                                   *required field
                                 </p>
                               )}
@@ -177,7 +174,7 @@ function Register() {
                                 {...register("dob", { required: true })}
                               />
                               {errors.dob?.type === "required" && (
-                                <p className="text-light fs-6">
+                                <p className="text-primary fs-6">
                                   *required field
                                 </p>
                               )}

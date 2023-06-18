@@ -1,5 +1,6 @@
 import React from "react";
 import "./Aboutus.css";
+import "../../images/aboutusimage.jpeg"
 import {
   AiFillLinkedin,
   AiFillTwitterCircle,
@@ -27,14 +28,19 @@ function Aboutus() {
               </p>
               <p className="lead test-cl">
                 By{" "}
-                <a href="#to-our-team" data-target="#to-our-team" className="text-decoration-none">
+                <a
+                  href="#to-our-team"
+                  data-target="#to-our-team"
+                  className="text-decoration-none"
+                >
                   Team Lyrik
                 </a>
               </p>
             </div>
             <div className="col-lg-6 d-none d-lg-block">
               <img
-                src="https://bootstrapious.com/i/snippets/sn-about/illus.png"
+                // src="../../images/aboutusimage.jpeg"
+                src="https://img.freepik.com/free-vector/business-team-communicating-via-social-media_74855-5439.jpg?size=626&ext=jpg&ga=GA1.1.200008001.1687097961&semt=ais"
                 alt=""
                 className="img-fluid"
               />

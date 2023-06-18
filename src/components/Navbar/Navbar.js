@@ -1,18 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RouterProvider } from "react-router-dom";
-import { createBrowserRouter } from "react-router-dom";
 import { loginContext } from "../../contexts/loginContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import {BsPersonFill} from "react-icons/bs"
+import { BsPersonFill } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 
-
 function Navbar() {
-  let location = useLocation()
-
-  const navigate = useNavigate();
+  let location = useLocation();
 
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
@@ -49,7 +43,7 @@ function Navbar() {
                 className="nav-link text-white fw-bold m-auto px-5"
                 to="/register-event"
                 replace
-                state={{from: location}}
+                state={{ from: location }}
               >
                 <p>Register Event</p>
               </Link>
@@ -82,7 +76,7 @@ function Navbar() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <BsPersonFill />{" "}{currentUser.username}
+                    <BsPersonFill /> {currentUser.username}
                   </p>
                   <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-start dropdown-menu-sm-start dropdown-menu-md-start">
                     <li>
@@ -91,10 +85,7 @@ function Navbar() {
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        class="dropdown-item fw-bold"
-                        to="booking-history"
-                      >
+                      <Link class="dropdown-item fw-bold" to="booking-history">
                         History
                       </Link>
                     </li>

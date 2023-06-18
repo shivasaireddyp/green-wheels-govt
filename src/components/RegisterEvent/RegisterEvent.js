@@ -13,7 +13,7 @@ function RegisterEvent() {
     useContext(loginContext);
   const { selectedAuditorium } = useContext(AuditoriumContext);
   let navigate = useNavigate();
-  let location = useLocation()
+  let location = useLocation();
 
   let [audis, setAudis] = useState([]);
   useEffect(() => {
@@ -30,12 +30,16 @@ function RegisterEvent() {
     fetchData();
   }, [setAudis]);
 
-  let { register, handleSubmit } = useForm();
+  let {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   let addEvent = (newEvent) => {
     console.log(newEvent);
   };
-  if(userLoginStatus){
+  if (userLoginStatus) {
     return (
       <div className="container text-light">
         <div className="card bg-dark" style={{ borderRadius: "33px" }}>
@@ -51,6 +55,9 @@ function RegisterEvent() {
                   placeholder="e.g Vikram"
                   {...register("firstname", { required: true })}
                 ></input>
+                {errors.firstname?.type === "required" && (
+                  <p className="text-primary fs-6">*required field</p>
+                )}
               </div>
               <div className="form-group col-sm mb-4">
                 <label htmlFor="lastname">Last Name:</label>
@@ -60,6 +67,9 @@ function RegisterEvent() {
                   placeholder="e.g Kumar"
                   {...register("lastname", { required: true })}
                 ></input>
+                {errors.lastname?.type === "required" && (
+                  <p className="text-primary fs-6">*required field</p>
+                )}
               </div>
             </div>
             <div className="form-group mb-4">
@@ -71,6 +81,9 @@ function RegisterEvent() {
                 placeholder="e.g Krithomedh Inaugration"
                 {...register("eventname", { required: true })}
               />
+              {errors.eventname?.type === "required" && (
+                <p className="text-primary fs-6">*required field</p>
+              )}
             </div>
             <div className="form-group mb-4">
               <label htmlFor="description">Event Description:</label>
@@ -84,6 +97,9 @@ function RegisterEvent() {
               <p className="text-muted">
                 Describe about the event in atleast 100 words
               </p>
+              {errors.description?.type === "required" && (
+                <p className="text-primary fs-6">*required field</p>
+              )}
             </div>
             <div className="form-group mb-4">
               <label htmlFor="headmail">Event Organiser Mail ID (POC):</label>
@@ -94,6 +110,9 @@ function RegisterEvent() {
                 placeholder="name@example.com"
                 {...register("headmail", { required: true })}
               />
+              {errors.headmail?.type === "required" && (
+                <p className="text-primary fs-6">*required field</p>
+              )}
             </div>
             <div className="form-group mb-4">
               <label htmlFor="auditorium">Select Auditorium:</label>
@@ -119,6 +138,9 @@ function RegisterEvent() {
                   </option>
                 ))}
               </select>
+              {errors.auditorium?.type === "required" && (
+                <p className="text-primary fs-6">*required field</p>
+              )}
             </div>
             <div className="form-group mb-2">
               <label htmlFor="eventdate" className="font-weight-bold">
@@ -130,6 +152,9 @@ function RegisterEvent() {
                 id="eventdate"
                 {...register("eventdate", { required: true })}
               />
+              {errors.eventdate?.type === "required" && (
+                <p className="text-primary fs-6">*required field</p>
+              )}
               <Link className="text-decoration-none" to="/upcoming-events">
                 <p>Refer Upcoming Events</p>
               </Link>
@@ -145,6 +170,9 @@ function RegisterEvent() {
                   placeholder=""
                   {...register("eventstarttime", { required: true })}
                 />
+                {errors.eventstarttime?.type === "required" && (
+                  <p className="text-primary fs-6">*required field</p>
+                )}
               </div>
               <div className="form-group col mb-4">
                 <label htmlFor="eventendtime">Select End Time</label>
@@ -155,6 +183,9 @@ function RegisterEvent() {
                   placeholder=""
                   {...register("eventendtime", { required: true })}
                 />
+                {errors.eventendtime?.type === "required" && (
+                  <p className="text-primary fs-6">*required field</p>
+                )}
               </div>
             </div>
             <div className="m-auto mb-4">
@@ -169,11 +200,8 @@ function RegisterEvent() {
         </div>
       </div>
     );
-  }
-  else{
-    return(
-    <Navigate to={"/login"} replace state={{from: location}} />
-    )
+  } else {
+    return <Navigate to={"/login"} replace state={{ from: location }} />;
   }
 }
 
