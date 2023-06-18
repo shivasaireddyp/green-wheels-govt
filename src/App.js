@@ -55,11 +55,11 @@ function App() {
         },
         {
           path: "/register-event",
-          element: userLoginStatus?<RegisterEvent />:<Navigate to='/login'/>,
+          element: <RegisterEvent />
         },
         {
           path: "/booking-history",
-          element: userLoginStatus?<BookingHistory />:<Navigate to="/login"/>,
+          element: <BookingHistory />
         },
       ],
     },
