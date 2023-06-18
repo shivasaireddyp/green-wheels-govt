@@ -10,7 +10,7 @@ import { AiFillFacebook } from "react-icons/ai";
 
 function Aboutus() {
   return (
-    <div>
+    <div data-spy="scroll" data-target=".test-cl">
       <div className="text-light">
         <div className="container py-2">
           <div className="row h-100 align-items-center py-5">
@@ -25,10 +25,10 @@ function Aboutus() {
                 celebrations, trust us to handle every aspect of your event,
                 ensuring a seamless and unforgettable occasion.
               </p>
-              <p className="lead">
+              <p className="lead test-cl">
                 By{" "}
-                <a href="#" className="text-decoration-none">
-                  <u className="text-decoration-none">Team Lyrik</u>
+                <a href="#to-our-team" data-target="#to-our-team" className="text-decoration-none">
+                  Team Lyrik
                 </a>
               </p>
             </div>
@@ -45,8 +45,10 @@ function Aboutus() {
       <div className="py-1">
         <div className="container text-light py-5">
           <div className="row mb-4">
-            <div className="col-lg-5">
-              <h2 className="fw-bold">Our team</h2>
+            <div id="to-our-team" className="col-lg-5">
+              <h2 className="fw-bold" id="item1">
+                Our team
+              </h2>
             </div>
           </div>
 

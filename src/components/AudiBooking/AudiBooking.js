@@ -67,7 +67,7 @@ function AudiBooking() {
         </p>
       </div>
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="row row-cols-1 row-cols-md-3">
           {audis.map((audi) => (
             <div key={audis._id}>
               <div className="col bg-dark for-cards ">
@@ -76,7 +76,7 @@ function AudiBooking() {
                     <img
                       className=" mb-1 p-2"
                       style={{
-                        height: "300px",
+                        height: "250px",
                         width: "100%",
                         borderTopLeftRadius: "25px",
                         borderTopRightRadius: "25px",

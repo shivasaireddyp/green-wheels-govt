@@ -11,7 +11,6 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location)
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
 
@@ -64,8 +63,9 @@ function Login() {
                 <div className="card-body p-md-5">
                   <div className="row justify-content-center">
                     <div className="col-md-6 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      {location?.state?.from.pathname ==
-                      "/user-profile/register-event" ? (
+                      {(location?.state?.from.pathname ==
+                      "/register-event")|| (location?.state?.from.pathname ==
+                        "/booking-history") ? (
                         <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                           Login to Continue
                         </p>
@@ -136,7 +136,8 @@ function Login() {
                     </div>
                     <div className="col-md-6 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img
-                        src="https://images.unsplash.com/photo-1478147427282-58a87a120781?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100"
+                        // https://images.unsplash.com/photo-1478147427282-58a87a120781?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100
+                        src="https://img.freepik.com/free-vector/tiny-people-carrying-key-open-padlock_74855-16292.jpg?w=1060&t=st=1687098245~exp=1687098845~hmac=6c841eb7fe058ea1ee08258846cfedc0f15fb7a06459615109ca783d91c078f5"
                         className="img-fluid rounded"
                         alt="Sample image"
                       />

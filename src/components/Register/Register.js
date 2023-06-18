@@ -9,13 +9,12 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 function Register() {
   //error state
   let [error, setError] = useState("");
-  let [passError, setPassError] = useState("")
+  let [passError, setPassError] = useState("");
   let [selectedFile, setSelectedFile] = useState(null);
 
   const validate = (value) => {
+    console.log(value);
 
-    console.log(value)
- 
     // if (validator.isStrongPassword(value, {
     //   minLength: 8, minLowercase: 1,
     //   minUppercase: 1, minNumbers: 1, minSymbols: 1
@@ -24,7 +23,7 @@ function Register() {
     // } else {
     //   setErrorMessage('Is Not Strong Password')
     // }
-  }
+  };
 
   //navigate
   const navigate = useNavigate();
@@ -136,7 +135,7 @@ function Register() {
                                 id="password"
                                 className="form-control"
                                 placeholder="Password"
-                                onChange={(e)=>validate(e.target.value)}
+                                onChange={(e) => validate(e.target.value)}
                                 {...register("password", { required: true })}
                               />
                               {errors.password?.type === "required" && (
@@ -203,7 +202,10 @@ function Register() {
                           </div>
 
                           <div className="d-flex justify-content-center mx-4 mb-lg-2">
-                            <button className="btn btn-lg" style={{ backgroundColor: "#AA77FF" }}>
+                            <button
+                              className="btn btn-lg"
+                              style={{ backgroundColor: "#AA77FF" }}
+                            >
                               Register
                             </button>
                           </div>
@@ -220,7 +222,7 @@ function Register() {
                       </div>
                       <div className="col-md-10 col-lg-6 col-xl-7 d-flex order-1 order-lg-2">
                         <img
-                          src="https://img.freepik.com/free-vector/sign-up-concept-illustration_114360-7885.jpg?w=2000"
+                          src="https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=740&t=st=1687098035~exp=1687098635~hmac=3e958d217493bba595e584869d52064a067d8211fe74b50503b2c0571f51b016"
                           className="img-fluid rounded"
                           alt="Sample image"
                         />
