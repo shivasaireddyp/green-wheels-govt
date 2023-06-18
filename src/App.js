@@ -14,7 +14,6 @@ import Aboutus from "./components/Aboutus/Aboutus";
 import { Navigate } from "react-router-dom";
 import { loginContext } from "./contexts/loginContext";
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
 import "./App.css";
 function App() {
 
@@ -56,11 +55,11 @@ function App() {
         },
         {
           path: "/register-event",
-          element: userLoginStatus?<RegisterEvent />:<Navigate to='/login' />,
+          element: userLoginStatus?<RegisterEvent />:<Navigate to='/login'/>,
         },
         {
           path: "/booking-history",
-          element: userLoginStatus?<BookingHistory />:<Navigate to="/login" />,
+          element: userLoginStatus?<BookingHistory />:<Navigate to="/login"/>,
         },
       ],
     },

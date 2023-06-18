@@ -11,6 +11,7 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location)
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
 

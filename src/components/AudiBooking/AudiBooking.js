@@ -2,13 +2,18 @@ import React, { useContext, useEffect } from "react";
 import "./AudiBooking.css";
 import { useState } from "react";
 import Audis from "./../AudiBooking/audis.json";
+import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import { loginContext } from "../../contexts/loginContext";
 import axios from "axios";
-import RegisterEvent from "../RegisterEvent/RegisterEvent";
 import { AuditoriumContext } from "../../contexts/AuditoriumContext";
 import { Link } from "react-router-dom";
 function AudiBooking() {
   const { selectAuditorium } = useContext(AuditoriumContext);
+  let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
+    useContext(loginContext);
+  let location = useLocation();
   let navigate = useNavigate();
   let [audis, setAudis] = useState([]);
   useEffect(() => {
@@ -27,12 +32,9 @@ function AudiBooking() {
 
   const handleAuditoriumClick = (audi) => {
     selectAuditorium(audi);
-    navigate("/register-event");
+    navigate('/register-event')
+    // <Navigate to="/register-event" state={{from: location}}/>
   };
-
-  //   console.log(audis);
-
-  const handleClick = (audi) => {};
 
   return (
     <div>

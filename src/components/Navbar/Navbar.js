@@ -6,9 +6,11 @@ import { loginContext } from "../../contexts/loginContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {BsPersonFill} from "react-icons/bs"
+import { useLocation } from "react-router-dom";
 
 
 function Navbar() {
+  let location = useLocation()
 
   const navigate = useNavigate();
 
@@ -45,7 +47,9 @@ function Navbar() {
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="register-event"
+                to="/register-event"
+                replace
+                state={{from: location}}
               >
                 <p>Register Event</p>
               </Link>
