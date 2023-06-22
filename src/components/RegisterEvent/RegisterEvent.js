@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 import { loginContext } from "../../contexts/loginContext";
 import { useLocation } from "react-router-dom";
+import { TbAlertCircle } from "react-icons/tb";
 
 function RegisterEvent() {
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
@@ -43,8 +44,8 @@ function RegisterEvent() {
     return (
       <div className="container text-light">
         <div className="card bg-dark" style={{ borderRadius: "33px" }}>
-          <h1 className="text-center fw-bold m-4">Register an Event</h1>
-          <form className="w-75 m-auto" onSubmit={handleSubmit(addEvent)}>
+          <h1 className="text-center fw-bold m-3">Register an Event</h1>
+          <form className="m-auto p-3 w-75" onSubmit={handleSubmit(addEvent)}>
             <div className="row">
               <div className="form-group col-sm mb-4">
                 <label htmlFor="firstname">First Name:</label>
@@ -56,7 +57,9 @@ function RegisterEvent() {
                   {...register("firstname", { required: true })}
                 ></input>
                 {errors.firstname?.type === "required" && (
-                  <p className="text-primary fs-6">*required field</p>
+                  <p className="text-primary fs-6">
+                    <TbAlertCircle /> required field
+                  </p>
                 )}
               </div>
               <div className="form-group col-sm mb-4">
@@ -68,7 +71,9 @@ function RegisterEvent() {
                   {...register("lastname", { required: true })}
                 ></input>
                 {errors.lastname?.type === "required" && (
-                  <p className="text-primary fs-6">*required field</p>
+                  <p className="text-primary fs-6">
+                    <TbAlertCircle /> required field
+                  </p>
                 )}
               </div>
             </div>
@@ -82,7 +87,9 @@ function RegisterEvent() {
                 {...register("eventname", { required: true })}
               />
               {errors.eventname?.type === "required" && (
-                <p className="text-primary fs-6">*required field</p>
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
               )}
             </div>
             <div className="form-group mb-4">
@@ -98,7 +105,9 @@ function RegisterEvent() {
                 Describe about the event in atleast 100 words
               </p>
               {errors.description?.type === "required" && (
-                <p className="text-primary fs-6">*required field</p>
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
               )}
             </div>
             <div className="form-group mb-4">
@@ -111,7 +120,9 @@ function RegisterEvent() {
                 {...register("headmail", { required: true })}
               />
               {errors.headmail?.type === "required" && (
-                <p className="text-primary fs-6">*required field</p>
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
               )}
             </div>
             <div className="form-group mb-4">
@@ -138,8 +149,18 @@ function RegisterEvent() {
                   </option>
                 ))}
               </select>
+              <p className="text-muted">
+                Please check your requirements and select perfect place for your
+                event
+                <Link className="text-decoration-none" to="/">
+                  {" "}
+                  here
+                </Link>
+              </p>
               {errors.auditorium?.type === "required" && (
-                <p className="text-primary fs-6">*required field</p>
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
               )}
             </div>
             <div className="form-group mb-2">
@@ -153,10 +174,12 @@ function RegisterEvent() {
                 {...register("eventdate", { required: true })}
               />
               {errors.eventdate?.type === "required" && (
-                <p className="text-primary fs-6">*required field</p>
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
               )}
               <Link className="text-decoration-none" to="/upcoming-events">
-                <p>Refer Upcoming Events</p>
+                <p style={{ color: "#AA77FF" }}>Refer Upcoming Events</p>
               </Link>
             </div>
             <div className="row">
@@ -171,7 +194,9 @@ function RegisterEvent() {
                   {...register("eventstarttime", { required: true })}
                 />
                 {errors.eventstarttime?.type === "required" && (
-                  <p className="text-primary fs-6">*required field</p>
+                  <p className="text-primary fs-6">
+                    <TbAlertCircle /> required field
+                  </p>
                 )}
               </div>
               <div className="form-group col mb-4">
@@ -184,7 +209,9 @@ function RegisterEvent() {
                   {...register("eventendtime", { required: true })}
                 />
                 {errors.eventendtime?.type === "required" && (
-                  <p className="text-primary fs-6">*required field</p>
+                  <p className="text-primary fs-6">
+                    <TbAlertCircle /> required field
+                  </p>
                 )}
               </div>
             </div>
