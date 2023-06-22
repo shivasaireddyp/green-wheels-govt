@@ -17,12 +17,12 @@ mclient.connect('mongodb://127.0.0.1:27017/emsdb')
     //get database obj
     let dbObj = dbRef.db('emsdb')
     let usersCollection = dbObj.collection("userscollection")
-    // let productsCollection = dbObj.collection("productscollection")
+    let eventsCollection = dbObj.collection("eventscollection")
     let audisCollection = dbObj.collection("audiscollection")
     
     //share collection objs to API
     app.set("usersCollection",usersCollection)
-    // app.set("productsCollection",productsCollection)
+    app.set("eventsCollection",eventsCollection)
     app.set("audisCollection",audisCollection)
     console.log("Data base conn succesful")
 })
@@ -32,12 +32,13 @@ mclient.connect('mongodb://127.0.0.1:27017/emsdb')
 // importing apis
 const usersApp = require("./APIs/usersApi")
 const audisApp = require("./APIs/audisApi")
+const eventsApp = require("./APIs/eventsApi")
 // const productsApp = require("./APIs/productsApi")
 
 // forwarding requests to apis
 app.use('/users-api',usersApp)
 app.use('/audis-api',audisApp)
-// app.use('/products-api',productsApp)
+app.use('/events-api',eventsApp)
 
 //middlware to deal with page refresh
 const pageRefresh=(request,response,next)=>{
@@ -57,7 +58,7 @@ app.use(invalidPathMiddleware)
 
 const errorHandlingMiddleware=(error,request,response,next)=>{
     response.send({"error-message":error.message})
-    console.log("errors handled here")
+    console.log(error.message)
     next()
 }
 

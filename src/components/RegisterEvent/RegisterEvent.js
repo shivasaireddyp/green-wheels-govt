@@ -15,6 +15,8 @@ function RegisterEvent() {
   const { selectedAuditorium } = useContext(AuditoriumContext);
   let navigate = useNavigate();
   let location = useLocation();
+  let [apiError, setApiError] = useState("");
+
 
   let [audis, setAudis] = useState([]);
   useEffect(() => {
@@ -39,7 +41,38 @@ function RegisterEvent() {
 
   let addEvent = (newEvent) => {
     console.log(newEvent);
+    // let fd = new FormData()
+    // fd.append("event",JSON.stringify(newEvent))
+    // console.log(fd)
+    
+    axios
+    .post("http://localhost:4000/events-api/register-event",newEvent)
+    .then((response)=>{
+      if(response.status === 201){
+        console.log("good response")
+        navigate("/event-guidelines")
+      }
+      if(response.status !== 201){
+        setApiError(response.data.message)
+      }
+    })
+    .catch((err)=>{
+      if (err.response) {
+        setApiError(err.message);
+      }
+      //the client never received a response
+      else if (err.request) {
+        setApiError(err.message);
+      }
+      //for other error
+      else {
+        setApiError(err.message);
+      }
+    })
   };
+
+  console.log(apiError)
+
   if (userLoginStatus) {
     return (
       <div className="container text-light">
@@ -126,6 +159,25 @@ function RegisterEvent() {
               )}
             </div>
             <div className="form-group mb-4">
+              <label htmlFor="headphone">Event Organiser Phone Number (POC):</label>
+              <input
+                type="tel"
+                className="form-control"
+                id="headphone"
+                pattern="[0-9]{10}"
+                // placeholder="name@example.com"
+                {...register("headphone", { required: true })}
+              />
+              <p className="text-muted">
+                Enter a 10 digit phone number.
+              </p>
+              {errors.headmail?.type === "required" && (
+                <p className="text-primary fs-6">
+                  <TbAlertCircle /> required field
+                </p>
+              )}
+            </div>
+            <div className="form-group mb-4">
               <label htmlFor="auditorium">Select Auditorium:</label>
               <select
                 className="form-control"
@@ -150,7 +202,7 @@ function RegisterEvent() {
                 ))}
               </select>
               <p className="text-muted">
-                Please check your requirements and select perfect place for your
+                Please check your requirements and select perfect venue for your
                 event
                 <Link className="text-decoration-none" to="/">
                   {" "}

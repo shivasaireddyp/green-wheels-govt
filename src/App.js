@@ -14,6 +14,7 @@ import Aboutus from "./components/Aboutus/Aboutus";
 import { Navigate } from "react-router-dom";
 import { loginContext } from "./contexts/loginContext";
 import { useContext } from "react";
+import Guidelines from "./components/Guidelines/Guidelines";
 import "./App.css";
 function App() {
 
@@ -61,6 +62,10 @@ function App() {
           path: "/booking-history",
           element: <BookingHistory />
         },
+        {
+          path: "/event-guidelines",
+          element: <Guidelines />
+        }
       ],
     },
   ]);

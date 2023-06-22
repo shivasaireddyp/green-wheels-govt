@@ -87,7 +87,6 @@ userApp.post('/register-user',multerObj.single('userimage'),expressAsyncHandler(
             response.status(200).send({message:"Username already exists"})
         }
         else{
-
             //add cdn link upload cdn link of cloudinary image to user object
             newUser.image = request.file.path;
 

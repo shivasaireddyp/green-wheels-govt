@@ -40,6 +40,7 @@ function Register() {
     console.log(newUser);
 
     let fd = new FormData();
+    console.log(fd)
     //append newUser to form data
     fd.append("user", JSON.stringify(newUser));
     //append selected file to form data
