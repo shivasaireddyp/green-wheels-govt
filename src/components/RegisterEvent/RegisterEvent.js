@@ -8,6 +8,7 @@ import axios from "axios";
 import { loginContext } from "../../contexts/loginContext";
 import { useLocation } from "react-router-dom";
 import { TbAlertCircle } from "react-icons/tb";
+import
 
 function RegisterEvent() {
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
@@ -16,7 +17,24 @@ function RegisterEvent() {
   let navigate = useNavigate();
   let location = useLocation();
   let [apiError, setApiError] = useState("");
+  let [selectedTimeError,setSelectedTimeError] = useState(null)
 
+  let [selectAudi, setSelectAudi] = useState(null);
+  let [selectDate, setSelectDate] = useState(null);
+  let [selectStartTime, setSelectStartTime] = useState("");
+  let [selectEndTime, setSelectEndTime] = useState("");
+
+  let starttime = new Date(selectStartTime)
+  // let endtime = new Date(selectEndTime)
+
+  console.log(starttime)
+  console.log(endtime)
+
+
+  console.log(selectAudi);
+  console.log(selectDate);
+  console.log(selectStartTime);
+  console.log(selectEndTime);
 
   let [audis, setAudis] = useState([]);
   useEffect(() => {
@@ -33,6 +51,8 @@ function RegisterEvent() {
     fetchData();
   }, [setAudis]);
 
+  // console.log(audis)
+
   let {
     register,
     handleSubmit,
@@ -41,37 +61,32 @@ function RegisterEvent() {
 
   let addEvent = (newEvent) => {
     console.log(newEvent);
-    // let fd = new FormData()
-    // fd.append("event",JSON.stringify(newEvent))
-    // console.log(fd)
-    
-    axios
-    .post("http://localhost:4000/events-api/register-event",newEvent)
-    .then((response)=>{
-      if(response.status === 201){
-        console.log("good response")
-        navigate("/event-guidelines")
-      }
-      if(response.status !== 201){
-        setApiError(response.data.message)
-      }
-    })
-    .catch((err)=>{
-      if (err.response) {
-        setApiError(err.message);
-      }
-      //the client never received a response
-      else if (err.request) {
-        setApiError(err.message);
-      }
-      //for other error
-      else {
-        setApiError(err.message);
-      }
-    })
-  };
 
-  console.log(apiError)
+    axios
+      .post("http://localhost:4000/events-api/register-event", newEvent)
+      .then((response) => {
+        if (response.status === 201) {
+          console.log("good response");
+          navigate("/event-guidelines");
+        }
+        if (response.status !== 201) {
+          setApiError(response.data.message);
+        }
+      })
+      .catch((err) => {
+        if (err.response) {
+          setApiError(err.message);
+        }
+        //the client never received a response
+        else if (err.request) {
+          setApiError(err.message);
+        }
+        //for other error
+        else {
+          setApiError(err.message);
+        }
+      });
+  };
 
   if (userLoginStatus) {
     return (
@@ -159,7 +174,9 @@ function RegisterEvent() {
               )}
             </div>
             <div className="form-group mb-4">
-              <label htmlFor="headphone">Event Organiser Phone Number (POC):</label>
+              <label htmlFor="headphone">
+                Event Organiser Phone Number (POC):
+              </label>
               <input
                 type="tel"
                 className="form-control"
@@ -168,9 +185,7 @@ function RegisterEvent() {
                 // placeholder="name@example.com"
                 {...register("headphone", { required: true })}
               />
-              <p className="text-muted">
-                Enter a 10 digit phone number.
-              </p>
+              <p className="text-muted">Enter a 10 digit phone number.</p>
               {errors.headmail?.type === "required" && (
                 <p className="text-primary fs-6">
                   <TbAlertCircle /> required field
@@ -182,7 +197,12 @@ function RegisterEvent() {
               <select
                 className="form-control"
                 id="auditorium"
-                {...register("auditorium", { required: true })}
+                {...register("auditorium", {
+                  required: true,
+                  onChange: (e) => {
+                    setSelectAudi(e.target.value);
+                  },
+                })}
               >
                 {!selectedAuditorium && (
                   <option disabled selected value="">
@@ -223,7 +243,12 @@ function RegisterEvent() {
                 type="date"
                 className="form-control mb-2"
                 id="eventdate"
-                {...register("eventdate", { required: true })}
+                {...register("eventdate", {
+                  required: true,
+                  onChange: (e) => {
+                    setSelectDate(e.target.value);
+                  },
+                })}
               />
               {errors.eventdate?.type === "required" && (
                 <p className="text-primary fs-6">
@@ -243,7 +268,12 @@ function RegisterEvent() {
                   className="form-control"
                   id="eventstarttime"
                   placeholder=""
-                  {...register("eventstarttime", { required: true })}
+                  {...register("eventstarttime", {
+                    required: true,
+                    onChange: (e) => {
+                      setSelectStartTime(e.target.value);
+                    },
+                  })}
                 />
                 {errors.eventstarttime?.type === "required" && (
                   <p className="text-primary fs-6">
@@ -258,7 +288,12 @@ function RegisterEvent() {
                   className="form-control"
                   id="eventendtime"
                   placeholder=""
-                  {...register("eventendtime", { required: true })}
+                  {...register("eventendtime", {
+                    required: true,
+                    onChange: (e) => {
+                      setSelectEndTime(e.target.value);
+                    },
+                  })}
                 />
                 {errors.eventendtime?.type === "required" && (
                   <p className="text-primary fs-6">
