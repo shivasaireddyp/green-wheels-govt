@@ -14,7 +14,7 @@ function UpcomingEvents() {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
-                src="https://images.unsplash.com/photo-1613210434051-4b00d62d03fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGF1ZGl0b3JpdW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=100"
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100"
                 className="d-block w-100"
                 alt="..."
               />
@@ -40,7 +40,7 @@ function UpcomingEvents() {
             </div>
             <div className="carousel-item">
               <img
-                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=100"
+                src="https://images.unsplash.com/photo-1613210434051-4b00d62d03fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGF1ZGl0b3JpdW18ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=100"
                 className="d-block w-100"
                 alt="..."
               />

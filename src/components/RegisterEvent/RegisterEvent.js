@@ -8,7 +8,6 @@ import axios from "axios";
 import { loginContext } from "../../contexts/loginContext";
 import { useLocation } from "react-router-dom";
 import { TbAlertCircle } from "react-icons/tb";
-import
 
 function RegisterEvent() {
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
@@ -20,21 +19,26 @@ function RegisterEvent() {
   let [selectedTimeError,setSelectedTimeError] = useState(null)
 
   let [selectAudi, setSelectAudi] = useState(null);
-  let [selectDate, setSelectDate] = useState(null);
-  let [selectStartTime, setSelectStartTime] = useState("");
-  let [selectEndTime, setSelectEndTime] = useState("");
+  let [selectDate, setSelectDate] = useState("");
+  let [selectStartTime, setSelectStartTime] = useState(null);
+  let [selectEndTime, setSelectEndTime] = useState(null);
 
-  let starttime = new Date(selectStartTime)
+  // let starttime = new Date(selectStartTime)
   // let endtime = new Date(selectEndTime)
+  // console.log(starttime)
+  // console.log(endtime)
+  
+  // if(selectEndTime-selectStartTime){
+  //   console.log("valid int")
+  // }
+  // else{
+  //   console.log("invalid ingt")
+  // }
 
-  console.log(starttime)
-  console.log(endtime)
-
-
-  console.log(selectAudi);
+  // console.log(selectAudi);
   console.log(selectDate);
-  console.log(selectStartTime);
-  console.log(selectEndTime);
+  // console.log(selectStartTime);
+  // console.log(selectEndTime);
 
   let [audis, setAudis] = useState([]);
   useEffect(() => {
@@ -250,6 +254,7 @@ function RegisterEvent() {
                   },
                 })}
               />
+              
               {errors.eventdate?.type === "required" && (
                 <p className="text-primary fs-6">
                   <TbAlertCircle /> required field

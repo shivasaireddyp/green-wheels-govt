@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 import { loginContext } from "../../contexts/loginContext";
 import axios from "axios";
 import { AuditoriumContext } from "../../contexts/AuditoriumContext";
+
 import { Link } from "react-router-dom";
 function AudiBooking() {
   const { selectAuditorium } = useContext(AuditoriumContext);
@@ -169,7 +170,7 @@ function AudiBooking() {
                       className="d-block float-start mt-1 text-decoration-none"
                       href="#"
                     >
-                      Check all details and past events here
+                      Check other details and past events here
                     </a>
                     <button
                       className="btn mb-2 w-100"
