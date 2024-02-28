@@ -27,7 +27,7 @@ function Login() {
   //user login
   const handleUserLogin = (userCredObj) => {
     //  console.log(userCredObj)
-    loginUser(userCredObj);o
+    loginUser(userCredObj);
   };
 
   useEffect(() => {

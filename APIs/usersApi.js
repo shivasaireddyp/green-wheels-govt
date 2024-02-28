@@ -2,6 +2,7 @@
 
 const exp = require('express')
 const userApp = exp.Router()
+require('dotenv').config()
 
 const expressAsyncHandler = require('express-async-handler')
 
@@ -127,7 +128,7 @@ userApp.post('/login-user',expressAsyncHandler(async(request,response)=>{
       //passwords are matched
       else{
         //create JWT token
-        let signedJWTToken=jwt.sign({username:userOfDB.username},"abcdef",{expiresIn:"1d"})
+        let signedJWTToken=jwt.sign({username:userOfDB.username},process.env.SECRET_KEY,{expiresIn:"1d"})
         //send token in response
         response.status(200).send({message:"success",token:signedJWTToken,user:userOfDB})
       }

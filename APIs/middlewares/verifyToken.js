@@ -1,4 +1,6 @@
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
+
 
 const verifyToken=(request,response,next)=>{
     // Token verification logic
@@ -10,7 +12,7 @@ const verifyToken=(request,response,next)=>{
     else{
         const token = bearerToken.split(" ")[1]
         try{
-        jwt.verify(token,"abcd")
+        jwt.verify(token, process.env.SECRET_KEY)
         next()
         }
         catch(err){

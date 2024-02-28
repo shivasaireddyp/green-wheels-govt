@@ -1,7 +1,10 @@
 const exp = require('express')
 const app = exp()
+require('dotenv').config()
+
 // console.log(app)
-app.listen(4000,()=>console.log("server started on port 4000"))
+const port = process.env.PORT||4000
+app.listen(port,()=>console.log("server started on port 4000"))
 
 const path=require("path")
 //connect express with react build
