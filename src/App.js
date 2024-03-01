@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootLayout from "./components/RootLayout/RootLayout";
+import RootLayout from "./components/RootLayout/RootLayout"
 import Home from "./components/Home/Home"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
