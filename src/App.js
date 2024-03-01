@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/RootLayout/RootLayout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const routerObj = createBrowserRouter([
