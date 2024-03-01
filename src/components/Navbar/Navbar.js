@@ -16,7 +16,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark shadow-5-strong">
         <div className="container-fluid">
           <Link className="navbar-brand text-white" to="/">
-            <h3>LEM</h3>
+            <h3>Green Wheels</h3>
           </Link>
           <button
             className="navbar-toggler"
@@ -41,18 +41,18 @@ function Navbar() {
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="/register-event"
+                to="/analyse"
                 replace
                 state={{ from: location }}
               >
-                <p>Register Event</p>
+                <p>Analyse</p>
               </Link>
 
               <Link
                 className="nav-link text-white fw-bold m-auto px-5"
-                to="upcoming-events"
+                to="trending-places"
               >
-                <p>Upcoming Events</p>
+                <p>Trending</p>
               </Link>
 
               <Link

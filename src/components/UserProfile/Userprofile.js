@@ -27,20 +27,6 @@ function Userprofile() {
                   <h3 className="name mt-1">@{currentUser.username}</h3>
                 </div>
               </div>
-              <div className="recent-border mt-4">
-                <span className="recent-orders">
-                  <Link className="text-decoration-none" to="/booking-history">
-                    Booking History
-                  </Link>
-                </span>
-              </div>
-              <div className="wishlist-border pt-2">
-                <span className="wishlist">
-                  <Link className="text-decoration-none" to="#">
-                    Wishlist
-                  </Link>
-                </span>
-              </div>
             </div>
           </div>
         </div>
