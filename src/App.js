@@ -1,11 +1,8 @@
 import React from "react";
-import Committees from "./components/Committees";
 import RootLayout from "./components/RootLayout";
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
-// import BookingHistory from "./components/BookingHistory/BookingHistory";
-// import RegisterEvent from "./components/RegisterEvent/RegisterEvent";
 import TrendingPlaces from "./components/TrendingPlaces/TrendingPlaces";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -23,7 +20,6 @@ function App() {
 
   let [currentUser, error, userLoginStatus, loginUser, logoutUser] =
     useContext(loginContext);
-
   const routerObj = createBrowserRouter([
     {
       path: "/",
@@ -32,10 +28,6 @@ function App() {
         {
           path: "/",
           element: <Home />,
-        },
-        {
-          path: "/committees",
-          element: <Committees />,
         },
         {
           path: "/trending-places",
