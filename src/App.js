@@ -15,6 +15,7 @@ import AnantagiriHills from "./components/TrendingPlaces/AnantagiriHills/Anantag
 import KuntalaFalls from "./components/TrendingPlaces/KuntalaFalls/KuntalaFalls";
 import Lakshwadeep from "./components/TrendingPlaces/Lakshwadeep/Lakshwadeep";
 import Analyse from "./components/Analyse/Analyse";
+import AnantagiriHillsAdmin from "./components/Ecospots/AnantagiriHills";
 import "./App.css";
 function App() {
 
@@ -65,7 +66,13 @@ function App() {
         },
         {
           path: "/analyse",
-          element: <Analyse />
+          element: <Analyse />,
+          children: [
+            {
+              path: "anantagiri-hills",
+              element: <AnantagiriHillsAdmin />
+            }
+          ]
         },
       ],
     },

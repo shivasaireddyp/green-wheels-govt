@@ -6,14 +6,11 @@ import "bootstrap"
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import UserLoginContextStore from "./contexts/UserLoginContextStore";
-import { AuditoriumProvider } from './contexts/AuditoriumContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
     <UserLoginContextStore>
-        <AuditoriumProvider>
             <App />
-        </AuditoriumProvider>
     </UserLoginContextStore>
 );
 
