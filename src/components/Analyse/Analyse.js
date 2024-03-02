@@ -22,7 +22,7 @@ function RegisterEvent() {
       <div className="container text-light">
         <div className="card bg-dark" style={{ borderRadius: "33px" }}>
           <h1 className="text-center fw-bold m-3">Analyse and Predict:</h1>
-          <div className="row container">
+          <div className="row text-center container">
             <Link className="col-3" to="/analyse/anantagiri-hills">Anantagiri Hills</Link>
             <Link className="col-3">Lakshwadeep Islands</Link>
             <Link className="col-3">Kuntala Waterfalls</Link>

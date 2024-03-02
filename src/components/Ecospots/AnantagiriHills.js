@@ -33,6 +33,9 @@ function AnantagiriHills() {
             <h1> Revenue: {visitor.Revenue}</h1>
             <h1> GDP: {visitor.GDP}</h1>
             <button onClick={showVisitor}>Predict</button>
+            <div className='container'>
+                
+            </div>
         </div>
     </div>
   )

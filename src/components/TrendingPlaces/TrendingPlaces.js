@@ -7,6 +7,7 @@ function TrendingPlaces() {
     <div classNameNameName="text-light">
       {/* <h1 classNameNameName="text-center text-white fw-bold mt-4 mb-4">Trending Places</h1> */}
       <div classNameNameName="container">
+        <h1>Trending places this week</h1>
         <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col">
             <div className="card h-100">
