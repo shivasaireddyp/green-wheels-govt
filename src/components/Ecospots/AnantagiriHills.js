@@ -20,7 +20,7 @@ function AnantagiriHills() {
     let showVisitor = () => {
         setVisitor({
             ...visitor,
-            count:10000,
+            count:11563,
             Revenue:345700,
             GDP:3.4
         })
