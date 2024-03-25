@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Green Wheels
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Green Wheels project repository! This is a full-stack web application designed to facilitate the government's efforts in predicting and improving ecotourism. Our platform leverages machine learning algorithms and data engineering techniques to provide accurate predictions and actionable insights.<br/>Whether you're a government agency or an eco-conscious traveler, Green Wheels empowers you to make informed decisions.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Full-Stack Web Application:**
+  - Developed using **React** for the frontend and **Node.js** for the backend.
+  - Utilizes **MongoDB** as the database for efficient data storage and retrieval.
 
-### `npm start`
+- **Machine Learning Integration:**
+  - Leverages multiple machine learning algorithms, including:
+    - **Random Forest**
+    - **Support Vector Machine (SVM)**
+    - **Linear Regression**
+  - These algorithms enable accurate predictions related to ecotourism trends and patterns.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Data Engineering Techniques:**
+  - Implements dimensionality reduction techniques such as **Principal Component Analysis (PCA)** and **Singular Value Decomposition (SVD)**.
+  - These techniques enhance data processing efficiency and improve model performance.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Role-Based Authentication:**
+  - Ensures secure access control by implementing role-based authentication.
+  - Different user roles (e.g., administrators, tourists, researchers) have specific permissions and views within the application.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository:**git clone https://github.com/your-username/green-wheels.git
 
-### `npm run build`
+2. **Install Dependencies:** cd green-wheels npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Configure Environment Variables:**
+- Create a `.env` file and set up environment variables (e.g., database connection details, API keys).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Run the Application:**npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. 
+## Contributing
 
-### `npm run eject`
+Contributions are welcome! If you'd like to contribute to Green Wheels, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/my-feature`).
+3. Make your changes and commit them (`git commit -m "Add new feature"`).
+4. Push to your branch (`git push origin feature/my-feature`).
+5. Open a pull request.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
